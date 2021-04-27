@@ -178,7 +178,6 @@ a:hover {
   color: var(--color-secondary);
 }
 
-
 p {
   font-family: var(--font-display);
   max-width: 55ch;
@@ -192,8 +191,10 @@ p {
   clear: left;
 }
 
-#about {
-  /* background-color: #ffe400; */
+#about, #gallery, #documentation {
+  display: grid;
+  place-content: center;
+  text-align: center;
 }
 
 .full-page {
@@ -201,11 +202,15 @@ p {
   padding-top: 5%;
 }
 
+.no-border {
+  border: none;
+}
+
 /* ////// canvas /////// */
 
-.container {
+.playlist-container {
   display: flex;
-  /* flex-flow: column wrap; */
+  flex-flow: column wrap;
 }
 
 #canvas {
