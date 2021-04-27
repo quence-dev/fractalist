@@ -94,6 +94,7 @@ function updateText() {
   //clear canvas & set values
   ctx.clearRect(0, 0, 300, 300);
   ctx.restore();
+  ctx.drawImage("fractal.jpeg", 0, 0);
   ctx.font = `${fontSize}px ${selection}`;
   ctx.textAlign = `${alignment}`;
 

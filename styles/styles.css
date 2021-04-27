@@ -216,7 +216,7 @@ p {
 #canvas {
   width: 300;
   height: 300;
-  border: 1px solid red;
+  background: white;
   float: left;
 }
 
