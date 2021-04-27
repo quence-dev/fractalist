@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/styles.css">
+  <script src="scripts/scripts.js" defer></script>
+  <title>fractalist | Spotify Cover Generator</title>
+</head>
+<body>
+  <header>
+  <h1>fractalist</h1>
+  </header>
+
+  <!-- <nav>
+    <ul>
+      <li>
+        <a href="login.html">Generator</a>
+      </li>
+      <li>
+        <a>How It Works</a>
+      </li>
+      <li>
+        <a>Gallery</a>
+      </li>
+      <li>
+        <a>Design Documentation</a>
+      </li>
+    </ul>
+  </nav> -->
+
+  <main>
+    <!-- <canvas id="canvas"></canvas> -->
+    <div class="container">
+      <input type="text" id="input"></input>
+      <select id="select"></select>
+    <div>
+      <label for="slider">Font Size:</label>
+      <input type="range" name="slider" min="12" max="96" value="42" class="slider" id="fontSize">
+      <p class="label"> <span id="value"> </span>px </p>
+    </div>
+      <div>
+        <input type="radio" name="align" value="left" class="icons" id="left"> Left
+        <input type="radio" name="align" value="center" class="icons" id="center" checked> Center
+        <input type="radio" name="align" value="right" class="icons" id="right"> Right
+      </div>
+    </div>
+    
+    <button id="download">Download</button>
+    <button id="upload">Publish to Spotify</button>
+  </main>
+
+</body>
+</html>

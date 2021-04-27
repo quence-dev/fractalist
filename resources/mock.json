@@ -1,0 +1,430 @@
+{
+    "href": "https://api.spotify.com/v1/users/1283163065/playlists?offset=5&limit=10",
+    "items": [
+        {
+            "collaborative": false,
+            "description": "my fav songs rn ily ",
+            "external_urls": {
+                "spotify": "https://open.spotify.com/playlist/3AGx3wjzXulU68t2ER9gmU"
+            },
+            "href": "https://api.spotify.com/v1/playlists/3AGx3wjzXulU68t2ER9gmU",
+            "id": "3AGx3wjzXulU68t2ER9gmU",
+            "images": [
+                {
+                    "height": null,
+                    "url": "https://i.scdn.co/image/ab67706c0000bebbe9f811575e965878a054bd0b",
+                    "width": null
+                }
+            ],
+            "name": "a 2 hour vibe check ",
+            "owner": {
+                "display_name": "Martin Flores",
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/user/1255000042"
+                },
+                "href": "https://api.spotify.com/v1/users/1255000042",
+                "id": "1255000042",
+                "type": "user",
+                "uri": "spotify:user:1255000042"
+            },
+            "primary_color": null,
+            "public": false,
+            "snapshot_id": "MTA5LDNlYzc0YTJlOThjNmRjZDI4OGMxMjE3ODNjZmMxZmFlNjgyN2IyMjI=",
+            "tracks": {
+                "href": "https://api.spotify.com/v1/playlists/3AGx3wjzXulU68t2ER9gmU/tracks",
+                "total": 42
+            },
+            "type": "playlist",
+            "uri": "spotify:playlist:3AGx3wjzXulU68t2ER9gmU"
+        },
+        {
+            "collaborative": false,
+            "description": "all songs (on spotify) including EDEN. if you have any questions, my instagram is @iamfuturebound.",
+            "external_urls": {
+                "spotify": "https://open.spotify.com/playlist/5q7O8V3ARnmPZaxremb1NK"
+            },
+            "href": "https://api.spotify.com/v1/playlists/5q7O8V3ARnmPZaxremb1NK",
+            "id": "5q7O8V3ARnmPZaxremb1NK",
+            "images": [
+                {
+                    "height": null,
+                    "url": "https://i.scdn.co/image/ab67706c0000bebbdcba898b803050c57260cd24",
+                    "width": null
+                }
+            ],
+            "name": "EDEN/The Eden Project",
+            "owner": {
+                "display_name": "jonestly",
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/user/infinityamaterasu"
+                },
+                "href": "https://api.spotify.com/v1/users/infinityamaterasu",
+                "id": "infinityamaterasu",
+                "type": "user",
+                "uri": "spotify:user:infinityamaterasu"
+            },
+            "primary_color": null,
+            "public": false,
+            "snapshot_id": "MTMzLDA4ZTY0MmUwMDA0NjE5ODhmMzY0MTFlMTFlY2NjZWE5YTkzMjEzNTA=",
+            "tracks": {
+                "href": "https://api.spotify.com/v1/playlists/5q7O8V3ARnmPZaxremb1NK/tracks",
+                "total": 105
+            },
+            "type": "playlist",
+            "uri": "spotify:playlist:5q7O8V3ARnmPZaxremb1NK"
+        },
+        {
+            "collaborative": false,
+            "description": "",
+            "external_urls": {
+                "spotify": "https://open.spotify.com/playlist/67YmaTkdZFRXehuPF5CUgV"
+            },
+            "href": "https://api.spotify.com/v1/playlists/67YmaTkdZFRXehuPF5CUgV",
+            "id": "67YmaTkdZFRXehuPF5CUgV",
+            "images": [
+                {
+                    "height": 640,
+                    "url": "https://mosaic.scdn.co/640/ab67616d0000b2736bc4b0abc90292b207799266ab67616d0000b27377fdcfda6535601aff081b6aab67616d0000b27382b243023b937fd579a35533ab67616d0000b273ff5429125128b43572dbdccd",
+                    "width": 640
+                },
+                {
+                    "height": 300,
+                    "url": "https://mosaic.scdn.co/300/ab67616d0000b2736bc4b0abc90292b207799266ab67616d0000b27377fdcfda6535601aff081b6aab67616d0000b27382b243023b937fd579a35533ab67616d0000b273ff5429125128b43572dbdccd",
+                    "width": 300
+                },
+                {
+                    "height": 60,
+                    "url": "https://mosaic.scdn.co/60/ab67616d0000b2736bc4b0abc90292b207799266ab67616d0000b27377fdcfda6535601aff081b6aab67616d0000b27382b243023b937fd579a35533ab67616d0000b273ff5429125128b43572dbdccd",
+                    "width": 60
+                }
+            ],
+            "name": "finally ",
+            "owner": {
+                "display_name": "Gloria Lee",
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/user/1274245515"
+                },
+                "href": "https://api.spotify.com/v1/users/1274245515",
+                "id": "1274245515",
+                "type": "user",
+                "uri": "spotify:user:1274245515"
+            },
+            "primary_color": null,
+            "public": false,
+            "snapshot_id": "ODksMGI2ZTQ1NjAxZGIzMWM1MGJkODdhY2IzYTYyODg1NmRiZTRmYzI5MQ==",
+            "tracks": {
+                "href": "https://api.spotify.com/v1/playlists/67YmaTkdZFRXehuPF5CUgV/tracks",
+                "total": 86
+            },
+            "type": "playlist",
+            "uri": "spotify:playlist:67YmaTkdZFRXehuPF5CUgV"
+        },
+        {
+            "collaborative": false,
+            "description": "An entry point",
+            "external_urls": {
+                "spotify": "https://open.spotify.com/playlist/5S8gkGt0gmx5r7mUfDAiWk"
+            },
+            "href": "https://api.spotify.com/v1/playlists/5S8gkGt0gmx5r7mUfDAiWk",
+            "id": "5S8gkGt0gmx5r7mUfDAiWk",
+            "images": [
+                {
+                    "height": null,
+                    "url": "https://i.scdn.co/image/ab67706c0000bebb6576b5d049a3ab262cbcbff4",
+                    "width": null
+                }
+            ],
+            "name": "GODSPEED",
+            "owner": {
+                "display_name": "adijahic",
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/user/adijahic"
+                },
+                "href": "https://api.spotify.com/v1/users/adijahic",
+                "id": "adijahic",
+                "type": "user",
+                "uri": "spotify:user:adijahic"
+            },
+            "primary_color": null,
+            "public": false,
+            "snapshot_id": "MjkzLDgwMmUwYzkxZmZhNTM3ZWYzYjRkNGI1NTJkZjc4MmQ5YTBlYjk4ZmI=",
+            "tracks": {
+                "href": "https://api.spotify.com/v1/playlists/5S8gkGt0gmx5r7mUfDAiWk/tracks",
+                "total": 233
+            },
+            "type": "playlist",
+            "uri": "spotify:playlist:5S8gkGt0gmx5r7mUfDAiWk"
+        },
+        {
+            "collaborative": false,
+            "description": "",
+            "external_urls": {
+                "spotify": "https://open.spotify.com/playlist/0LFKK9ScArLZD4dd5MLDmm"
+            },
+            "href": "https://api.spotify.com/v1/playlists/0LFKK9ScArLZD4dd5MLDmm",
+            "id": "0LFKK9ScArLZD4dd5MLDmm",
+            "images": [
+                {
+                    "height": 640,
+                    "url": "https://mosaic.scdn.co/640/ab67616d0000b2731a3b42ed1308bdd42492c031ab67616d0000b273a3be0079ad9d2443c0404fb6ab67616d0000b273d20f1ce118b8c2bc2a3be4caab67616d0000b273de3c04b5fc750b68899b20a9",
+                    "width": 640
+                },
+                {
+                    "height": 300,
+                    "url": "https://mosaic.scdn.co/300/ab67616d0000b2731a3b42ed1308bdd42492c031ab67616d0000b273a3be0079ad9d2443c0404fb6ab67616d0000b273d20f1ce118b8c2bc2a3be4caab67616d0000b273de3c04b5fc750b68899b20a9",
+                    "width": 300
+                },
+                {
+                    "height": 60,
+                    "url": "https://mosaic.scdn.co/60/ab67616d0000b2731a3b42ed1308bdd42492c031ab67616d0000b273a3be0079ad9d2443c0404fb6ab67616d0000b273d20f1ce118b8c2bc2a3be4caab67616d0000b273de3c04b5fc750b68899b20a9",
+                    "width": 60
+                }
+            ],
+            "name": "quence!!!",
+            "owner": {
+                "display_name": "nat_thibs",
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/user/nat_thibs"
+                },
+                "href": "https://api.spotify.com/v1/users/nat_thibs",
+                "id": "nat_thibs",
+                "type": "user",
+                "uri": "spotify:user:nat_thibs"
+            },
+            "primary_color": null,
+            "public": false,
+            "snapshot_id": "MjAwLDMxYWI3NGZkNmM0NGNmZjlhZWJlMTQxMTgyMjFiMDE1MzBiM2ZlYmU=",
+            "tracks": {
+                "href": "https://api.spotify.com/v1/playlists/0LFKK9ScArLZD4dd5MLDmm/tracks",
+                "total": 197
+            },
+            "type": "playlist",
+            "uri": "spotify:playlist:0LFKK9ScArLZD4dd5MLDmm"
+        },
+        {
+            "collaborative": false,
+            "description": "Slow burners for late nights.",
+            "external_urls": {
+                "spotify": "https://open.spotify.com/playlist/37i9dQZF1DXdQvOLqzNHSW"
+            },
+            "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DXdQvOLqzNHSW",
+            "id": "37i9dQZF1DXdQvOLqzNHSW",
+            "images": [
+                {
+                    "height": null,
+                    "url": "https://i.scdn.co/image/ab67706f000000037d625e1cc8524ffdca59dbe8",
+                    "width": null
+                }
+            ],
+            "name": "Late Night Vibes",
+            "owner": {
+                "display_name": "Spotify",
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/user/spotify"
+                },
+                "href": "https://api.spotify.com/v1/users/spotify",
+                "id": "spotify",
+                "type": "user",
+                "uri": "spotify:user:spotify"
+            },
+            "primary_color": null,
+            "public": false,
+            "snapshot_id": "MTYxOTU1ODUxMSwwMDAwMDAwMGQ0MWQ4Y2Q5OGYwMGIyMDRlOTgwMDk5OGVjZjg0Mjdl",
+            "tracks": {
+                "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DXdQvOLqzNHSW/tracks",
+                "total": 75
+            },
+            "type": "playlist",
+            "uri": "spotify:playlist:37i9dQZF1DXdQvOLqzNHSW"
+        },
+        {
+            "collaborative": false,
+            "description": "HAPPY TRAVELS!!!!!!!!!    SAFE TRIP!!",
+            "external_urls": {
+                "spotify": "https://open.spotify.com/playlist/3gU1KBpK04Tdf0JZtIRmAE"
+            },
+            "href": "https://api.spotify.com/v1/playlists/3gU1KBpK04Tdf0JZtIRmAE",
+            "id": "3gU1KBpK04Tdf0JZtIRmAE",
+            "images": [
+                {
+                    "height": 640,
+                    "url": "https://mosaic.scdn.co/640/ab67616d0000b273086ff6de369b6d617f1c8da4ab67616d0000b2738ded1cfe63ca5ecd269b26eeab67616d0000b273dfa6ba57d446244054f068f4ab67616d0000b273f8715d94d22b0b4f1bc741b8",
+                    "width": 640
+                },
+                {
+                    "height": 300,
+                    "url": "https://mosaic.scdn.co/300/ab67616d0000b273086ff6de369b6d617f1c8da4ab67616d0000b2738ded1cfe63ca5ecd269b26eeab67616d0000b273dfa6ba57d446244054f068f4ab67616d0000b273f8715d94d22b0b4f1bc741b8",
+                    "width": 300
+                },
+                {
+                    "height": 60,
+                    "url": "https://mosaic.scdn.co/60/ab67616d0000b273086ff6de369b6d617f1c8da4ab67616d0000b2738ded1cfe63ca5ecd269b26eeab67616d0000b273dfa6ba57d446244054f068f4ab67616d0000b273f8715d94d22b0b4f1bc741b8",
+                    "width": 60
+                }
+            ],
+            "name": "ALCSIDD",
+            "owner": {
+                "display_name": "jjnnuu92",
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/user/jjnnuu92"
+                },
+                "href": "https://api.spotify.com/v1/users/jjnnuu92",
+                "id": "jjnnuu92",
+                "type": "user",
+                "uri": "spotify:user:jjnnuu92"
+            },
+            "primary_color": null,
+            "public": false,
+            "snapshot_id": "MTIzOSxhMDg3MzQ1ODBhMmY5M2Q0N2FiZDAwMTcwYjhkOTIyMmZlMDQ1ZDY4",
+            "tracks": {
+                "href": "https://api.spotify.com/v1/playlists/3gU1KBpK04Tdf0JZtIRmAE/tracks",
+                "total": 814
+            },
+            "type": "playlist",
+            "uri": "spotify:playlist:3gU1KBpK04Tdf0JZtIRmAE"
+        },
+        {
+            "collaborative": false,
+            "description": "those fleeting moments in songs that you wish would last forever...",
+            "external_urls": {
+                "spotify": "https://open.spotify.com/playlist/3LwcD1NGiD2f75cCcaGi74"
+            },
+            "href": "https://api.spotify.com/v1/playlists/3LwcD1NGiD2f75cCcaGi74",
+            "id": "3LwcD1NGiD2f75cCcaGi74",
+            "images": [
+                {
+                    "height": 640,
+                    "url": "https://mosaic.scdn.co/640/ab67616d0000b2737fcead687e99583072cc217bab67616d0000b2738940ac99f49e44f59e6f7fb3ab67616d0000b273b12c66cbee07ff97c6fe2d2eab67616d0000b273c8913cd7b91bb7f6bbbec305",
+                    "width": 640
+                },
+                {
+                    "height": 300,
+                    "url": "https://mosaic.scdn.co/300/ab67616d0000b2737fcead687e99583072cc217bab67616d0000b2738940ac99f49e44f59e6f7fb3ab67616d0000b273b12c66cbee07ff97c6fe2d2eab67616d0000b273c8913cd7b91bb7f6bbbec305",
+                    "width": 300
+                },
+                {
+                    "height": 60,
+                    "url": "https://mosaic.scdn.co/60/ab67616d0000b2737fcead687e99583072cc217bab67616d0000b2738940ac99f49e44f59e6f7fb3ab67616d0000b273b12c66cbee07ff97c6fe2d2eab67616d0000b273c8913cd7b91bb7f6bbbec305",
+                    "width": 60
+                }
+            ],
+            "name": "Burning Bridges",
+            "owner": {
+                "display_name": "Spencer Vilicic",
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/user/1283163065"
+                },
+                "href": "https://api.spotify.com/v1/users/1283163065",
+                "id": "1283163065",
+                "type": "user",
+                "uri": "spotify:user:1283163065"
+            },
+            "primary_color": null,
+            "public": true,
+            "snapshot_id": "MTMsMDQyNzc1NmQxNmM5MzA0ODUxY2IyNjE1ZTI3NzU3Y2M5OGVhYWFhNA==",
+            "tracks": {
+                "href": "https://api.spotify.com/v1/playlists/3LwcD1NGiD2f75cCcaGi74/tracks",
+                "total": 11
+            },
+            "type": "playlist",
+            "uri": "spotify:playlist:3LwcD1NGiD2f75cCcaGi74"
+        },
+        {
+            "collaborative": false,
+            "description": "",
+            "external_urls": {
+                "spotify": "https://open.spotify.com/playlist/5VXDEs31EEKtTkQtmsTnOz"
+            },
+            "href": "https://api.spotify.com/v1/playlists/5VXDEs31EEKtTkQtmsTnOz",
+            "id": "5VXDEs31EEKtTkQtmsTnOz",
+            "images": [
+                {
+                    "height": 640,
+                    "url": "https://mosaic.scdn.co/640/ab67616d0000b27399581550ef9746ca582bb3ccab67616d0000b273b179f05570b4b2715be318c1ab67616d0000b273b8468a2fe9d25d6a35434dafab67616d0000b273e5158bfb0005da06d5d7c0eb",
+                    "width": 640
+                },
+                {
+                    "height": 300,
+                    "url": "https://mosaic.scdn.co/300/ab67616d0000b27399581550ef9746ca582bb3ccab67616d0000b273b179f05570b4b2715be318c1ab67616d0000b273b8468a2fe9d25d6a35434dafab67616d0000b273e5158bfb0005da06d5d7c0eb",
+                    "width": 300
+                },
+                {
+                    "height": 60,
+                    "url": "https://mosaic.scdn.co/60/ab67616d0000b27399581550ef9746ca582bb3ccab67616d0000b273b179f05570b4b2715be318c1ab67616d0000b273b8468a2fe9d25d6a35434dafab67616d0000b273e5158bfb0005da06d5d7c0eb",
+                    "width": 60
+                }
+            ],
+            "name": "Wrong Generation",
+            "owner": {
+                "display_name": "Natalie Leinbach",
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/user/21ui3g2ursp4tixnsngx5kg4a"
+                },
+                "href": "https://api.spotify.com/v1/users/21ui3g2ursp4tixnsngx5kg4a",
+                "id": "21ui3g2ursp4tixnsngx5kg4a",
+                "type": "user",
+                "uri": "spotify:user:21ui3g2ursp4tixnsngx5kg4a"
+            },
+            "primary_color": null,
+            "public": false,
+            "snapshot_id": "NjMsOTg1ZWI0NWU4MzdhMDZmM2EyYmVmZTM0Y2Q1MWQzMGI5ZGU5MWIxMg==",
+            "tracks": {
+                "href": "https://api.spotify.com/v1/playlists/5VXDEs31EEKtTkQtmsTnOz/tracks",
+                "total": 56
+            },
+            "type": "playlist",
+            "uri": "spotify:playlist:5VXDEs31EEKtTkQtmsTnOz"
+        },
+        {
+            "collaborative": false,
+            "description": "u know the vibes",
+            "external_urls": {
+                "spotify": "https://open.spotify.com/playlist/2ihQSBIi5wyIb4rB75tYzc"
+            },
+            "href": "https://api.spotify.com/v1/playlists/2ihQSBIi5wyIb4rB75tYzc",
+            "id": "2ihQSBIi5wyIb4rB75tYzc",
+            "images": [
+                {
+                    "height": 640,
+                    "url": "https://mosaic.scdn.co/640/ab67616d0000b2733437e8bbed340ca556c42c04ab67616d0000b2735695a657aef0e81bde0c6001ab67616d0000b27361e11cce99aab86cb1ce253bab67616d0000b2739416ed64daf84936d89e671c",
+                    "width": 640
+                },
+                {
+                    "height": 300,
+                    "url": "https://mosaic.scdn.co/300/ab67616d0000b2733437e8bbed340ca556c42c04ab67616d0000b2735695a657aef0e81bde0c6001ab67616d0000b27361e11cce99aab86cb1ce253bab67616d0000b2739416ed64daf84936d89e671c",
+                    "width": 300
+                },
+                {
+                    "height": 60,
+                    "url": "https://mosaic.scdn.co/60/ab67616d0000b2733437e8bbed340ca556c42c04ab67616d0000b2735695a657aef0e81bde0c6001ab67616d0000b27361e11cce99aab86cb1ce253bab67616d0000b2739416ed64daf84936d89e671c",
+                    "width": 60
+                }
+            ],
+            "name": "Fuck Yeah Synths",
+            "owner": {
+                "display_name": "Spencer Vilicic",
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/user/1283163065"
+                },
+                "href": "https://api.spotify.com/v1/users/1283163065",
+                "id": "1283163065",
+                "type": "user",
+                "uri": "spotify:user:1283163065"
+            },
+            "primary_color": null,
+            "public": true,
+            "snapshot_id": "MjksMjAyNTU5ZDlmOGY5N2MxZmM5ZjAzNDU2ZTJlMDAxNTIyNGY5Mzc4ZA==",
+            "tracks": {
+                "href": "https://api.spotify.com/v1/playlists/2ihQSBIi5wyIb4rB75tYzc/tracks",
+                "total": 26
+            },
+            "type": "playlist",
+            "uri": "spotify:playlist:2ihQSBIi5wyIb4rB75tYzc"
+        }
+    ],
+    "limit": 10,
+    "next": "https://api.spotify.com/v1/users/1283163065/playlists?offset=15&limit=10",
+    "offset": 5,
+    "previous": "https://api.spotify.com/v1/users/1283163065/playlists?offset=0&limit=10",
+    "total": 40
+}

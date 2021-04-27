@@ -8,37 +8,30 @@
   <title>Playlist Select</title>
   </head>
   <body>
-  <h1> Playlist Select</h1>
-
-  <div id="root"></div>
-
-  <ul>
-    <li><a href="generator.html">playlist</a></li>
-    <li><a href="generator.html">playlist</a></li>
-    <li><a href="generator.html">playlist</a></li>
-    <li><a href="generator.html">playlist</a></li>
-</ul>
+    <h1> Playlist Select</h1>
   
-  <nav>
-    <ul>
-     <li>
-        <a>How It Works</a>
-      </li>
-      <li>
-        <a>Gallery</a>
-      </li>
-      <li>
-        <a>Design Documentation</a>
-      </li>
-    </ul>
-  </nav>
+    <nav>
+      <ul>
+       <li>
+          <a href="index.html#about">How It Works</a>
+        </li>
+        <li>
+          <a href="index.html#gallery">Gallery</a>
+        </li>
+        <li>
+          <a href="index.html#documentation">Design Documentation</a>
+        </li>
+      </ul>
+    </nav>
+  
+    <div id="root"></div>
 
   <script>
 
     fetch('http://3.12.147.218:8000/spotify/is_authenticated')
     .then((res) => res.json())
     .then((data) => {
-      if  (data.status) {
+      if  (!data.status) {
         fetch('http://3.12.147.218:8000/spotify/get_auth_url')
     }
       else{
