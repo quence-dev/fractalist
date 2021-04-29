@@ -345,3 +345,5 @@
     };
   
   })();
+
+  module.export = Fractal;

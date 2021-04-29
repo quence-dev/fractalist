@@ -256,3 +256,7 @@ html, body, div, span, a, p, main {
     }
   
   }
+
+  canvas {
+    border: 1px solid red;
+  }
