@@ -211,6 +211,7 @@ p {
 .playlist-container {
   display: flex;
   flex-flow: column wrap;
+  max-width: 50%;
 }
 
 #canvas {
