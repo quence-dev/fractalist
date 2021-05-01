@@ -16,6 +16,7 @@ const leftAlign = document.getElementById("left");
 const centerAlign = document.getElementById("center");
 const rightAlign = document.getElementById("right");
 const alignChoice = document.getElementsByName("align");
+const vertical = document.getElementById("vertical");
 
 const download = document.getElementById("download");
 const upload = document.getElementById("upload");
@@ -84,17 +85,26 @@ function checkAlignment() {
   }
 }
 
+function clearCanvas () {
+    ctx.clearRect(0, 0, 300, 300);
+    ctx.restore();
+    ctx.fillStyle = "white";
+    ctx.fillRect(0, 0, c.width, c.height);
+}
+
 function updateText() {
   //store current values
-  let selection = select.value;
-  let saveText = input.value;
-  let fontSize = slider.value;
+  let selection = document.getElementById("select").value;
+  let saveText = document.getElementById("input").value;
+  let fontSize = document.getElementById("fontSize").value;
+  
   checkAlignment();
 
-  //clear canvas & set values
-  ctx.clearRect(0, 0, 300, 300);
-  ctx.restore();
-  ctx.drawImage("fractal.jpeg", 0, 0);
+  //clear canvas & set background to white
+  clearCanvas();
+  
+  //Restore font color
+  ctx.fillStyle = "black";
   ctx.font = `${fontSize}px ${selection}`;
   ctx.textAlign = `${alignment}`;
 
@@ -128,6 +138,11 @@ slider.oninput = function () {
   updateText();
 };
 
+vertical.oninput = function () {
+  verticalVal = this.value;
+  updateText();
+}
+
 function downloadImg() {
   // IE/Edge Support (PNG only)
   if (window.navigator.msSaveBlob) {
@@ -135,8 +150,8 @@ function downloadImg() {
   } else {
     const a = document.createElement("a");
     document.body.appendChild(a);
-    a.href = document.getElementById("canvas").toDataURL("image/jpeg");
     a.download = "cover-image.jpg";
+    a.href = document.getElementById("canvas").toDataURL("image/jpeg").replace("image/jpeg", "image/octet-stream");
     a.click();
     document.body.removeChild(a);
   }
@@ -150,3 +165,5 @@ function uploadImg() {
   console.log(dataURI);
   //CODE HERE FOR SPOTIFY UPLOAD
 }
+
+//Text wrap found here: https://www.html5canvastutorials.com/tutorials/html5-canvas-wrap-text-tutorial/#:~:text=To%20wrap%20text%20with%20HTML5,the%20next%20line%20should%20wrap.
