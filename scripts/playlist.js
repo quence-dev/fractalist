@@ -16,6 +16,7 @@ fetch('resources/mock.json')
       const h3 = document.createElement("h3");
       h3.textContent = `${playlist.name}`;
       const h4 = document.createElement("h4");
+      h4.setAttribute("class", "card-owner");
       h4.textContent = `${playlist.owner.display_name}`;
       const p = document.createElement("p");
       p.setAttribute("class", "card-description");
