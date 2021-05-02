@@ -23,7 +23,7 @@ fetch('resources/mock.json')
       card.appendChild(img);
       card.addEventListener("click", () => {
           const a = document.createElement("a");
-          a.href = "mock_generator.html";
+          a.href = "generator_mock.html";
           a.click();
           document.body.removeChild(a);
       })
