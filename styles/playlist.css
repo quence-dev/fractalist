@@ -4,8 +4,6 @@
   
   html {
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    font-family: 'Dosis', sans-serif;
     line-height: 1.6;
     /* color: #666; */
     /* background: #F6F6F6; */
@@ -108,16 +106,4 @@
     .card {
       flex: 1 1 calc(33% - 2rem);
     }
-  }
-  
-  .card:nth-child(2n) h1 {
-    background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
-  }
-  
-  .card:nth-child(4n) h1 {
-    background-image: linear-gradient(120deg, #ff9a9e 0%, #fecfef 100%);
-  }
-  
-  .card:nth-child(5n) h1 {
-    background-image: linear-gradient(120deg, #ffc3a0 0%, #ffafbd 100%);
   }

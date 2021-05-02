@@ -47,8 +47,7 @@ body {
   }
 }
 
-/* Begin theme styles
-*/
+/* /////////////// Begin theme styles ///////////////////// */
 
 :root {
   --font-base: "Rubik", sans-serif;
@@ -225,30 +224,36 @@ select {
 	font-size: 30px;
 }
 
-.icons:before {
-  display: inline-block;
-  position: relative;
-  font-style: normal;
-  font-variant: normal;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
+.icons {
+  opacity: 0;
+  width: 0;
+  margin: 0;
 }
 
-#left:before {
-    content: "\f036";
+.fas {
+  padding: 12px;
+  border: 1px solid black;
 }
 
-#center:before  {
-    content: "\f037";
+.icons + i {
+cursor: pointer;
 }
 
-#right:before {
-    content: "\f038";
+.icons + i:hover {
+  background: #eee;
 }
 
-/* ///////////////////////////////// */
+.icons:checked + i {
+  color: white;
+  background: black;
+}
+
+/* /////////////////playlist cards//////////////// */
+
+#root {
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
 .container {
   display: flex;
@@ -264,7 +269,33 @@ select {
   transition: all .2s linear;
 }
 
+h1 {
+  text-align: center;
+  padding: 1.5rem 2.5rem;
+  margin: 0 0 2rem 0;
+  font-size: 1.5rem;
+  color: white;
+}
+
+img {
+  display: block;
+  margin: 1rem auto;
+  max-width: 100%;
+}
+
 .card:hover {
   box-shadow: 2px 8px 45px rgba(0, 0, 0, .15);
   transform: translate3D(0, -2px, 0);
+}
+
+@media screen and (min-width: 600px) {
+  .card {
+    flex: 1 1 calc(50% - 2rem);
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .card {
+    flex: 1 1 calc(33% - 2rem);
+  }
 }
