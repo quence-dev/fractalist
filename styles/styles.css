@@ -262,11 +262,18 @@ cursor: pointer;
 
 .card {
   margin: 1rem;
-  background: white;
-  box-shadow: 2px 4px 25px rgba(0, 0, 0, .1);
+  background: var(--color-dark);
+  /* box-shadow: 2px 4px 25px rgba(0, 0, 0, 0.1); */
+  border: 1px solid grey;
   border-radius: 12px;
   overflow: hidden;
   transition: all .2s linear;
+}
+.card:hover {
+  /* box-shadow: 2px 8px 45px rgba(0, 0, 0, 0.15); */
+  border: 1px solid grey;
+  background: var(--color-tertiary);
+  transform: translate3D(0, -2px, 0);
 }
 
 h3 {
@@ -274,18 +281,19 @@ h3 {
   padding: 1.5rem 2.5rem;
   margin: 0 0 2rem 0;
   font-size: 1.5rem;
-  color: white;
+  color: var(--color-light);
+}
+
+.card-description {
+  padding: 0 2.5rem 2.5rem;
+    margin: 0;
 }
 
 img {
   display: block;
   margin: 1rem auto;
   max-width: 100%;
-}
-
-.card:hover {
-  box-shadow: 2px 8px 45px rgba(0, 0, 0, .15);
-  transform: translate3D(0, -2px, 0);
+  height: 100px;
 }
 
 @media screen and (min-width: 600px) {
