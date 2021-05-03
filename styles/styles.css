@@ -95,15 +95,7 @@ h4 {
   font-family: var(--font-base);
   line-height: 1.1;
 }
-h1::after,
-h2::after,
-h3::after,
-h4::after {
-  content: ".";
-  color: currentColor;
-  font-size: 1em;
-  line-height: 1;
-} */
+ */
 
 h1 {
   font-size: clamp(var(--size-800), calc(1rem + 16vw), var(--size-major));
@@ -113,6 +105,7 @@ h2 {
   font-size: clamp(var(--size-600), calc(1rem + 4vw), var(--size-700));
   font-weight: 300;
   color: var(--color-secondary);
+  padding-bottom: 1rem;
 }
 
 /* h3 {
@@ -140,15 +133,16 @@ header {
   padding: 2rem;
 }
 
-header span {
-  display: block;
-  margin-top: var(--vertical-padding);
-  width: calc();
+.header-layout div {
+  margin: 1rem;
 }
 
-.customBtn a {
-  padding: 1em;
-  width: 100%;
+header a {
+  padding: 1rem;
+  border: 1px solid red;
+}
+
+.customBtn {
   border: 1px solid var(--color-primary);
   border-radius: 5px;
 }
@@ -157,17 +151,17 @@ header span {
   color: var(--color-primary);
   padding-left: 1em;
 }
-.customBtn:hover i, .customBtn:hover a {
+.customBtn:hover i, .customBtn:hover {
   color: var(--color-dark);
   background: var(--color-primary);
   text-decoration: none;
 }
 
 a[href="playlist_mock.html"] {
-  padding-top: 1rem;
-  margin-top: 1rem;
   font-size: var(--size-300);
 }
+
+/* ////// Navigation bar ////// */
 
 nav {
   background-color: var(--color-dark);
@@ -239,15 +233,18 @@ p {
   border: none;
 }
 
-.design-list {
-  list-style: none;
+.instructions {
+  display: flex;
+  place-content: center;
+  text-align: left;
 }
 
-.design-list li {
+.instructions ol {
+  color: var(--color-light);
   padding: var(--size-700);
-  font-family: var(--font-base);
-  font-size: var(--size-700);
-  font-weight: 900;
+  margin: var(--size-700);
+  font-weight: 600;
+  font-size: var(--size-500);
 }
 
 .colors-container {
@@ -259,19 +256,6 @@ p {
 .colors-container div {
   padding: var(--size-700);
   text-align: center;
-}
-
-.instructions {
-  display: flex;
-  place-content: center;
-  text-align: left;
-}
-
-.instructions ol {
-  color: var(--color-light);
-  padding: var(--size-700);
-  margin: var(--size-700);
-  font-weight: 900;
 }
 
 .warm {
@@ -294,6 +278,18 @@ p {
   background: black;
 }
   
+.doc-layout {
+  list-style: none;
+}
+
+.doc-layout li {
+  padding: var(--size-700);
+  font-family: var(--font-base);
+  font-size: var(--size-700);
+  font-weight: 600;
+}
+
+
 /* //////////////// Buttons ////////////////// */
 .myButton {
   color: rgb(255, 255, 255);
