@@ -112,6 +112,7 @@ h1 {
 h2 {
   font-size: clamp(var(--size-600), calc(1rem + 4vw), var(--size-700));
   font-weight: 300;
+  color: var(--color-secondary);
 }
 
 /* h3 {
@@ -128,7 +129,7 @@ a {
 }
 
 a:hover {
-  color: var(--color-secondary);
+  text-decoration: underline;
 }
 
 header {
@@ -159,8 +160,14 @@ header span {
 .customBtn:hover i, .customBtn:hover a {
   color: var(--color-dark);
   background: var(--color-primary);
+  text-decoration: none;
 }
 
+a[href="playlist_mock.html"] {
+  padding-top: 1rem;
+  margin-top: 1rem;
+  font-size: var(--size-300);
+}
 
 nav {
   background-color: var(--color-dark);
@@ -188,16 +195,18 @@ nav ul {
 
 nav li {
   padding: 1em;
+  text-transform: uppercase;
 }
 
 nav a {
   color: var(--color-secondary);
 }
 
-nav a:hover {
+nav a:hover, .active {
   border-bottom: 4px solid var(--color-secondary);
   padding-bottom: 1em;
   color: var(--color-primary);
+  text-decoration: none;
 }
 
 p {
@@ -249,6 +258,7 @@ p {
 
 .colors-container div {
   padding: var(--size-700);
+  text-align: center;
 }
 
 .instructions {
@@ -283,11 +293,6 @@ p {
   color: white;
   background: black;
 }
-
-/* .black, .white{
-  border-bottom: 4px solid linear-gradient(left, #000000 0%, #727272 50%, #FFFFFF 100%);
-  border-bottom-color:#000000;
-} */
   
 /* //////////////// Buttons ////////////////// */
 .myButton {
@@ -306,6 +311,32 @@ p {
   box-shadow: rgba(255, 255, 255, 0.38) 5px 5px 15px 5px inset;
   border: 1px solid rgb(255, 255, 255); 
   display: inline-block;
+}
+
+#topBtn {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed/sticky position */
+  bottom: 20px; /* Place the button at the bottom of the page */
+  right: 30px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  border: 1px solid var(--color-secondary); /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color: transparent; /* Set a background color */
+  color: var(--color-secondary); /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 15px; /* Some padding */
+  border-radius: 10px; /* Rounded corners */
+  font-size: 18px; /* Increase font size */
+}
+
+#topBtn:hover, #topBtn:hover i {
+  background-color: var(--color-secondary); /* Add a dark-grey background on hover */
+  color: var(--color-dark);
+}
+
+.fa-caret-up {
+  color: var(--color-secondary);
+  padding-left: 1rem;
 }
 
 /* ///////////////// playlist cards //////////////// */
@@ -431,7 +462,7 @@ select {
   padding: 0;
 }
 
-.fas:not(.fa-play) {
+.fa-align-left, .fa-align-center, .fa-align-right {
   padding: 12px;
   background: var(--color-light);
   color: black;

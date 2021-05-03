@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles/styles.css">
+  <script src="scripts/scripts.js" defer></script>
   <title>fractalist | Spotify Cover Generator</title>
 </head>
 
@@ -14,25 +15,30 @@
     <h1>fractalist</h1>
     <h2>custom playlist covers, based on your music</h2>
     <span class="customBtn">
-      <a href="http://3.12.147.218:8000/spotify/get_auth_url">Connect to Spotify<i class="fas fa-play"></i></a>
+      <a href="http://3.12.147.218:8000/spotify/get_auth_url">Log in to Spotify<i class="fas fa-play"></i></a>
     </span>
+    <a href="playlist_mock.html">Launch Mockup</a>
   </header>
-  <nav>
+
+  <nav id="navigation">
     <ul>
       <li>
         <a href="http://3.12.147.218:8000/spotify/get_auth_url">Generator</a>
       </li>
       <li>
-        <a href="#about">How It Works</a>
+        <a href="#about" id="aboutLink">How It Works</a>
       </li>
       <li>
-        <a href="#documentation">Design Docs</a>
+        <a href="#documentation" id="documentationLink">Design Docs</a>
       </li>
       <li>
-        <a href="#credits">Credits</a>
+        <a href="#credits" id="creditsLink">Credits</a>
       </li>
     </ul>
   </nav>
+
+  <button onclick="topFunction()" id="topBtn" title="Go to top">Top<i class="fas fa-caret-up"></i></button>
+
   <main>
     <section id="about" class="full-page">
       <div class="instructions">
@@ -76,9 +82,9 @@
         </div>
         <div>
           <h4>Light or Dark</h4>
-          <p>Depending on whether the majority of songs in your playlist are major key or minor key, the colors of your
+          <p>Depending on the general modality of songs in your playlist, the colors of your
             fractal will
-            either be light (major) or dark (minor).</p>
+            either be light (major key) or dark (minor key).</p>
           <p>
             <quot>"Mode
               indicates the modality (major or minor) of a track, the type of scale from which its melodic content
@@ -118,7 +124,6 @@
         <p>Visit the <a href="https://github.com/relishyeah/YellowBrick/tree/main/backend">backend git repository</a>.
       </p>
     </div>
-      <a href="playlist_mock.html">MOCKUP</a>
     </section>
 
   </main>
