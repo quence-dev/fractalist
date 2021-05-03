@@ -1,7 +1,7 @@
 Frontend design by Spencer Vilicic & Nick Mohler.
 
-Backend design by Quinn Relyea, Linsy Wang, Laurina Blaze, Sameer Chaturvedi, Kevin Guo, and Spencer Vilicic. Visit the <a href="https://github.com/relishyeah/YellowBrick/tree/main/backend">backend github repository</a>.
+Backend design by Quinn Relyea, Linsy Wang, Laurina Blaze, Sameer Chaturvedi, Kevin Guo, and Spencer Vilicic. Visit the [backend GitHub repository](https://github.com/relishyeah/YellowBrick/tree/main/backend).
         
-Our project is inspired by <a href="https://musicscapes.herokuapp.com/">musicScapes</a> <a href="https://github.com/StefanAleksik/musicScape">(GitHub)</a> by Nadia Campo Woytuk and Stefan Aleksik. Fractalist uses Rafael Pedicini's <a href="https://fractal.rafgraph.dev/">Mandelbrot Fractal Generator</a> <a href="https://github.com/rafgraph/fractal">(GitHub)</a>, which is freely distributed under the GNU GPL v3 copyleft license.
+Our project is inspired by [musicScapes](https://musicscapes.herokuapp.com/) [(GitHub)](https://github.com/StefanAleksik/musicScape) by Nadia Campo Woytuk and Stefan Aleksik. Fractalist uses Rafael Pedicini's [Mandelbrot Fractal Generator](https://fractal.rafgraph.dev/) [(GitHub)](https://github.com/rafgraph/fractal), which is freely distributed under the GNU GPL v3 copyleft license.
 
-Icons provided by <a href="https://fontawesome.com">Font Awesome</a>.
+Icons provided by [FontAwesome](https://fontawesome.com).
