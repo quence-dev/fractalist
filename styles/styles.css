@@ -111,6 +111,7 @@ h1 {
 
 h2 {
   font-size: clamp(var(--size-600), calc(1rem + 4vw), var(--size-700));
+  font-weight: 300;
 }
 
 /* h3 {
@@ -121,27 +122,45 @@ h4 {
   font-size: clamp(var(--size-400), calc(1rem + 1.5vw), var(--size-500));
 } */
 
+a {
+  text-decoration: none;
+  color: var(--color-primary);
+}
+
+a:hover {
+  color: var(--color-secondary);
+}
+
 header {
   display: grid;
   place-content: center;
   text-align: center;
   color: var(--color-primary);
+  padding: 2rem;
 }
 
 header span {
   display: block;
-  margin: var(--vertical-padding);
+  margin-top: var(--vertical-padding);
+  width: calc();
 }
 
-h2 {
-  font-weight: 300;
-}
-
-header a {
+.customBtn a {
   padding: 1em;
   width: 100%;
   border: 1px solid var(--color-primary);
+  border-radius: 5px;
 }
+.fa-play {
+  background: none;
+  color: var(--color-primary);
+  padding-left: 1em;
+}
+.customBtn:hover i, .customBtn:hover a {
+  color: var(--color-dark);
+  background: var(--color-primary);
+}
+
 
 nav {
   background-color: var(--color-dark);
@@ -181,28 +200,30 @@ nav a:hover {
   color: var(--color-primary);
 }
 
-a {
-  text-decoration: none;
-  color: var(--color-primary);
-}
-
-a:hover {
-  color: var(--color-secondary);
-}
-
 p {
   font-family: var(--font-display);
-  max-width: 55ch;
+  max-width: 45ch;
 }
 
 #about, #documentation, #credits {
   display: grid;
   place-content: center;
+  padding: 2rem;
+}
+
+#credits p {
+  padding: 0;
+  margin: 0;
+  max-width: 75ch;
+}
+
+#credits div {
+  padding-bottom: 1rem;
 }
 
 .full-page {
   min-height: 100vh;
-  /* padding-top: 5%; */
+  scroll-padding: 3rem 0 0 0;
 }
 
 .no-border {
@@ -224,7 +245,6 @@ p {
   display: flex;
   flex-flow: row wrap;  
   place-content: center; 
-  /* padding: var(--size-700); */
 }
 
 .colors-container div {
@@ -238,10 +258,10 @@ p {
 }
 
 .instructions ol {
-  background: var(--color-secondary);
+  color: var(--color-light);
   padding: var(--size-700);
   margin: var(--size-700);
-  color: var(--color-dark);
+  font-weight: 900;
 }
 
 .warm {
@@ -411,7 +431,7 @@ select {
   padding: 0;
 }
 
-.fas {
+.fas:not(.fa-play) {
   padding: 12px;
   background: var(--color-light);
   color: black;
