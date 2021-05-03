@@ -1,4 +1,4 @@
-##[Visit Fractalist](https://quence-dev.github.io/fractalist)
+## [Visit Fractalist](https://quence-dev.github.io/fractalist)
 
 Frontend design by Spencer Vilicic & Nick Mohler.
 
