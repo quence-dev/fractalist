@@ -87,16 +87,6 @@ body {
   font-family: var(--font-base);
 }
 
-/* h1,
-h2,
-h3,
-h4 {
-  font-weight: 700;
-  font-family: var(--font-base);
-  line-height: 1.1;
-}
- */
-
 h1 {
   font-size: clamp(var(--size-800), calc(1rem + 16vw), var(--size-major));
 }
@@ -133,13 +123,15 @@ header {
   padding: 2rem;
 }
 
-.header-layout div {
-  margin: 1rem;
+header div {
+  margin: 2rem;
+  display: grid;
+  place-content: center;
+  margin: auto;
 }
 
 header a {
   padding: 1rem;
-  border: 1px solid red;
 }
 
 .customBtn {
@@ -212,6 +204,7 @@ p {
   display: grid;
   place-content: center;
   padding: 2rem;
+  scroll-padding: 3rem 0 0 0;
 }
 
 #credits p {
@@ -226,7 +219,6 @@ p {
 
 .full-page {
   min-height: 100vh;
-  scroll-padding: 3rem 0 0 0;
 }
 
 .no-border {
