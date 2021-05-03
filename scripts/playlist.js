@@ -1,5 +1,21 @@
 //generates HTML for playlist webpage
 
+//here is list of playlists
+const params = new URLSearchParams(window.location.search);
+    var code = (params.get("code"));
+    console.log(code);
+    fetch('https://api.spotify.com/v1/me/playlists',{
+    headers : 
+    {'Accept': 'application/json',
+    'Content-Type': 'application/json',
+    'Authorization': 'Bearer ' + code
+    }})
+    .then((res) => res.json())
+    .then((data) => {
+      var playlists = data
+      console.log(data)
+    });
+
 const app = document.getElementById("root");
 const container = document.createElement("div");
 container.setAttribute("class", "container");

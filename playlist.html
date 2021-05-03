@@ -9,6 +9,7 @@
   <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
   </head>
   <body>
+    <script src="/scripts/playlist.js"></script>
     <h1> Playlist Select</h1>
   
     <nav>
@@ -24,23 +25,6 @@
   
     <div id="root"></div>
 
-  <script>
-    const params = new URLSearchParams(window.location.search);
-    var code = (params.get("code"));
-    console.log(code);
-    fetch('https://api.spotify.com/v1/me/playlists',{
-    headers : 
-    {'Accept': 'application/json',
-    'Content-Type': 'application/json',
-    'Authorization': 'Bearer ' + code
-    }})
-    .then((res) => res.json())
-    .then((data) => {
-      console.log(data)
-    });
-
-
-  </script>
 
 
 </body>
