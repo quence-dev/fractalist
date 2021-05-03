@@ -75,6 +75,10 @@ body {
   --underline-thick: 5px;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: var(--color-dark);
   color: var(--color-light);
@@ -134,7 +138,6 @@ h2 {
 }
 
 header a {
-  /* text-transform: uppercase; */
   padding: 1em;
   width: 100%;
   border: 1px solid var(--color-primary);
@@ -142,6 +145,7 @@ header a {
 
 nav {
   background-color: var(--color-dark);
+  border-bottom: 1px solid var(--color-secondary);
   height: auto;
   position: fixed;
   top: 0;
@@ -167,10 +171,19 @@ nav li {
   padding: 1em;
 }
 
+nav a {
+  color: var(--color-secondary);
+}
+
+nav a:hover {
+  border-bottom: 4px solid var(--color-secondary);
+  padding-bottom: 1em;
+  color: var(--color-primary);
+}
+
 a {
   text-decoration: none;
   color: var(--color-primary);
-  /* mix-blend-mode: difference; */
 }
 
 a:hover {
