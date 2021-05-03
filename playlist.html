@@ -29,19 +29,18 @@
     <div id="root"></div>
 
   <script>
-    fetch('https://fractalist.herokuapp.com/spotify/is_authenticated')
+    const params = new URLSearchParams(window.location.search);
+    var code = (params.get("code"));
+    console.log(code);
+    fetch('https://api.spotify.com/v1/me/playlists',{
+    headers : 
+    {'Accept': 'application/json',
+    'Content-Type': 'application/json',
+    'Authorization': 'Bearer ' + code
+    }})
     .then((res) => res.json())
     .then((data) => {
-      if  (!data.status) {
-        console.log('grrr');
-        window.location.replace('https://fractalist.herokuapp.com/spotify/get_auth_url')
-        console.log('are you broken') 
-    }
-      else{
-        fetch('https://fractalist.herokuapp.com/spotify/get_playlists').then((res) => res.json())
-    .then((data) => {
-      console.log(data);
-    })}
+      console.log(data)
     });
 
 
