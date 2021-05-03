@@ -1,96 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles/styles.css">
+  <script src="scripts/scripts.js" defer></script>
   <title>fractalist | Spotify Cover Generator</title>
 </head>
+
 <body>
   <header class="full-page">
     <h1>fractalist</h1>
-    <h2>custom spotify playlist covers, made for you</h2>
-    <span><a href="http://3.12.147.218:8000/spotify/get_auth_url">Begin</a></span>
+    <h2>custom playlist covers, based on your music</h2>
+    <span class="customBtn">
+      <a href="http://3.12.147.218:8000/spotify/get_auth_url">Log in to Spotify<i class="fas fa-play"></i></a>
+    </span>
+    <a href="playlist_mock.html">Launch Mockup</a>
   </header>
-  <nav>
+
+  <nav id="navigation">
     <ul>
       <li>
         <a href="http://3.12.147.218:8000/spotify/get_auth_url">Generator</a>
       </li>
       <li>
-        <a href="#about">How It Works</a>
+        <a href="#about" id="aboutLink">How It Works</a>
       </li>
       <li>
-        <a href="#gallery">Gallery</a>
+        <a href="#documentation" id="documentationLink">Design Docs</a>
       </li>
       <li>
-        <a href="#documentation">Design Docs</a>
+        <a href="#credits" id="creditsLink">Credits</a>
       </li>
     </ul>
   </nav>
+
+  <button onclick="topFunction()" id="topBtn" title="Go to top">Top<i class="fas fa-caret-up"></i></button>
+
   <main>
     <section id="about" class="full-page">
-      <h3>How It Works</h3>
-      <ol>
-        <li>
-          <p>Connect your Spotify account.</p>
-        </li>
-        <li>
-          <p>Choose one of your playlists. We'll analyze the music in your playlist and create an image unique to your songs.</p>
-        </li>
-        <li>
-         <p>Edit the cover text's font, size, and color (or remove it).</p>
-        </li>
-        <li>
-          <p>Publish to Spotify in one click (or download it to your device).</p>
-        </li>
-      </ol>
-
-      <div>
-        <span class=".placeholder-img"><img></span>
-        <img>
-        <img>
+      <div class="instructions">
+        <ol>
+          <li>
+            <p>Connect your Spotify account.</p>
+          </li>
+          <li>
+            <p>Choose one of your playlists. We'll analyze the music in your playlist and create an image unique to your
+              songs.</p>
+          </li>
+          <li>
+            <p>Edit the cover text's font, size, and color (or remove it).</p>
+          </li>
+          <li>
+            <p>Publish to Spotify in one click (or download it to your device).</p>
+          </li>
+        </ol>
       </div>
 
       <h3>Colors</h3>
-      <h4>Warm or Cool</h4>
-      <p>Valence A measure from 0.0 to 1.0 describing the musical positiveness conveyed by a track. Tracks with high valence sound more positive (e.g. happy, cheerful, euphoric), while tracks with low valence sound more negative (e.g. sad, depressed, angry).</p>
-      <h4>Light or Dark</h4>
-      <p>Energy is a measure from 0.0 to 1.0 and represents a perceptual measure of intensity and activity. Typically, energetic tracks feel fast, loud, and noisy. For example, death metal has high energy, while a Bach prelude scores low on the scale. Effect: colors are  light or dark</p>
-      <h4>Black or White</h4>
-      <p>Mode indicates the modality (major or minor) of a track, the type of scale from which its melodic content is derived. Major is represented by 1 and minor is 0. Effect: colors are black or white.</p>
-    </section>
-
-    <section id="gallery" class="full-page">
-      <h3>Gallery</h3>
-      <p>Under construction (check back later).</p>
+      <div class="colors-container">
+        <div>
+          <h4><span class="warm">Warm</span> or <span class="cool">Cool</span></h4>
+          <p>Using Spotify's valence measurement, the colors in your fractal will either be warm (high valence) or cool
+            (low valence).</p>
+          <p>
+            <quot>"Tracks with high valence sound more positive (e.g. happy, cheerful, euphoric), while tracks with low
+              valence sound more negative (e.g. sad, depressed, angry)."</quot>
+          </p>
+        </div>
+        <div>
+          <h4><span class="black">Black</span> or <span class="white">White</span></h4>
+          <p>Using Spotify's energy measurement, the colors of your fractal will either include white (high energy) or
+            black
+            (low energy).</p>
+          <p>
+            <quot>"Energetic tracks feel fast, loud, and noisy. For example, death metal has high energy, while a Bach
+              prelude scores low on the scale."</quot>
+          </p>
+        </div>
+        <div>
+          <h4>Light or Dark</h4>
+          <p>Depending on the general modality of songs in your playlist, the colors of your
+            fractal will
+            either be light (major key) or dark (minor key).</p>
+          <p>
+            <quot>"Mode
+              indicates the modality (major or minor) of a track, the type of scale from which its melodic content
+              is derived. Major is represented by 1 and minor is 0."</quot>
+          </p>
+        </div>
+      </div>
     </section>
 
     <section id="documentation" class="full-page">
-      <h3>Design Documentation</h3>
-      <ul>
+      <ul class="design-list">
         <li>
           <a href="resources/Project_Proposal.pdf">Project Proposal</a>
         </li>
         <li>
-          <a href="https://docs.google.com/document/d/1fN8BZjIyvyiUzIVEPRpJ05Oa0B4kU3Y_6GI3A_QQ8ow/edit?usp=sharing">Design Documentation</a>
+          <a href="https://docs.google.com/document/d/1fN8BZjIyvyiUzIVEPRpJ05Oa0B4kU3Y_6GI3A_QQ8ow/edit?usp=sharing">Design
+            Documentation</a>
         </li>
         <li>
-          <a href="https://www.figma.com/proto/fiG2lcoi1UDj1qETihmwpr/Spencer-and-Nick-Wireframe?node-id=1%3A2&scaling=scale-down-width&page-id=0%3A1">Wireframes</a>
+          <a
+            href="https://www.figma.com/proto/fiG2lcoi1UDj1qETihmwpr/Spencer-and-Nick-Wireframe?node-id=1%3A2&scaling=scale-down-width&page-id=0%3A1">Wireframes</a>
         </li>
         <li>
-          <a href="https://docs.google.com/document/d/1e4tJ5-ZP8j-sIa8YIDC8mHw33FI-T8GQZuQwVkjf8ng/edit?usp=sharing">UX Report</a>
+          <a href="https://docs.google.com/document/d/1e4tJ5-ZP8j-sIa8YIDC8mHw33FI-T8GQZuQwVkjf8ng/edit?usp=sharing">UX
+            Report</a>
         </li>
       </ul>
     </section>
 
+    <section id="credits" class="full-page">
+      <div>
+        <p>
+          Frontend design by Spencer Vilicic & Nick Mohler. Visit the <a
+            href="https://github.com/quence-dev/fractalist">frontend github repository</a>.
+        </p>
+      </div>
+      <div>
+        <p>
+          Backend design by Quinn Relyea, Linsy Wang, Laurina Blaze, Sameer Chaturvedi, Kevin Guo, and Spencer Vilicic.
+          Visit the <a href="https://github.com/relishyeah/YellowBrick/tree/main/backend">backend github repository</a>.
+        </p>
+      </div>
+      <div>
+        <p>
+          Our project is inspired by <a href="https://musicscapes.herokuapp.com/">musicScapes</a> <a
+            href="https://github.com/StefanAleksik/musicScape">(github)</a> by Nadia Campo Woytuk and Stefan Aleksik.
+          Fractalist uses Rafael Pedicini's <a href="https://fractal.rafgraph.dev/">Mandelbrot Fractal Generator</a> <a
+            href="https://github.com/rafgraph/fractal">(github)</a>, which is freely distributed under the GNU GPL v3
+          copyleft license.
+        </p>
+      </div>
+    </section>
+
   </main>
 
-  <footer>
-        <a href="mock_playlist.html">MOCKUP</a>
-        <p>Frontend design by Spencer Vilicic & Nick Mohler</p>
-        <p>Backend design by Quinn Relyea, Linsy Wang, Laurina Blaze, Sameer Chaturvedi, Kevin Guo, and Spencer Vilicic</p>
-  </footer>
 </body>
+
 </html>

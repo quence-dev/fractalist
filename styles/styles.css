@@ -47,8 +47,7 @@ body {
   }
 }
 
-/* Begin theme styles
-*/
+/* /////////////// Begin theme styles ///////////////////// */
 
 :root {
   --font-base: "Rubik", sans-serif;
@@ -74,6 +73,10 @@ body {
   --border-width-2: 3px;
   --underline-thin: 2px;
   --underline-thick: 5px;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -108,6 +111,8 @@ h1 {
 
 h2 {
   font-size: clamp(var(--size-600), calc(1rem + 4vw), var(--size-700));
+  font-weight: 300;
+  color: var(--color-secondary);
 }
 
 /* h3 {
@@ -118,31 +123,55 @@ h4 {
   font-size: clamp(var(--size-400), calc(1rem + 1.5vw), var(--size-500));
 } */
 
+a {
+  text-decoration: none;
+  color: var(--color-primary);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 header {
   display: grid;
   place-content: center;
   text-align: center;
   color: var(--color-primary);
+  padding: 2rem;
 }
 
 header span {
   display: block;
-  margin: var(--vertical-padding);
+  margin-top: var(--vertical-padding);
+  width: calc();
 }
 
-h2 {
-  font-weight: 300;
-}
-
-header a {
-  /* text-transform: uppercase; */
+.customBtn a {
   padding: 1em;
   width: 100%;
   border: 1px solid var(--color-primary);
+  border-radius: 5px;
+}
+.fa-play {
+  background: none;
+  color: var(--color-primary);
+  padding-left: 1em;
+}
+.customBtn:hover i, .customBtn:hover a {
+  color: var(--color-dark);
+  background: var(--color-primary);
+  text-decoration: none;
+}
+
+a[href="playlist_mock.html"] {
+  padding-top: 1rem;
+  margin-top: 1rem;
+  font-size: var(--size-300);
 }
 
 nav {
   background-color: var(--color-dark);
+  border-bottom: 1px solid var(--color-secondary);
   height: auto;
   position: fixed;
   top: 0;
@@ -166,105 +195,291 @@ nav ul {
 
 nav li {
   padding: 1em;
+  text-transform: uppercase;
 }
 
-a {
-  text-decoration: none;
-  color: var(--color-primary);
-  /* mix-blend-mode: difference; */
-}
-
-a:hover {
+nav a {
   color: var(--color-secondary);
+}
+
+nav a:hover, .active {
+  border-bottom: 4px solid var(--color-secondary);
+  padding-bottom: 1em;
+  color: var(--color-primary);
+  text-decoration: none;
 }
 
 p {
   font-family: var(--font-display);
-  max-width: 55ch;
+  max-width: 45ch;
 }
 
-.placeholder-img {
-  width: 100px;
-  height: 100px;
-  background: red;
-  float: left;
-  clear: left;
-}
-
-#about, #gallery, #documentation {
+#about, #documentation, #credits {
   display: grid;
   place-content: center;
-  text-align: center;
+  padding: 2rem;
+}
+
+#credits p {
+  padding: 0;
+  margin: 0;
+  max-width: 75ch;
+}
+
+#credits div {
+  padding-bottom: 1rem;
 }
 
 .full-page {
   min-height: 100vh;
-  padding-top: 5%;
+  scroll-padding: 3rem 0 0 0;
 }
 
 .no-border {
   border: none;
 }
 
-/* ////// canvas /////// */
+.design-list {
+  list-style: none;
+}
 
-.playlist-container {
+.design-list li {
+  padding: var(--size-700);
+  font-family: var(--font-base);
+  font-size: var(--size-700);
+  font-weight: 900;
+}
+
+.colors-container {
+  display: flex;
+  flex-flow: row wrap;  
+  place-content: center; 
+}
+
+.colors-container div {
+  padding: var(--size-700);
+  text-align: center;
+}
+
+.instructions {
+  display: flex;
+  place-content: center;
+  text-align: left;
+}
+
+.instructions ol {
+  color: var(--color-light);
+  padding: var(--size-700);
+  margin: var(--size-700);
+  font-weight: 900;
+}
+
+.warm {
+  text-shadow: 0px 3px 5px #FF4510;
+}
+
+.cool {
+  text-shadow: 0px 3px 5px var(--color-secondary);
+}
+
+.black{
+  color: black;
+  /* text-shadow: 0px 3px 5px white; */
+  background: white;
+}
+
+.white {
+  /* text-shadow: 0px 3px 5px white; */
+  color: white;
+  background: black;
+}
+  
+/* //////////////// Buttons ////////////////// */
+.myButton {
+  color: rgb(255, 255, 255);
+  font-size: 16px;
+  line-height: 16px;
+  padding: 6px; 
+  border-radius: 10px; 
+  font-family: var(--font-display);
+  font-weight: normal; 
+  text-decoration: none; 
+  font-style: normal; 
+  font-variant: normal;
+  text-transform: none;
+  background-image: linear-gradient(45deg, rgb(15, 164, 164) 0%, rgb(94, 198, 203) 50%, rgb(27, 203, 177) 100%); 
+  box-shadow: rgba(255, 255, 255, 0.38) 5px 5px 15px 5px inset;
+  border: 1px solid rgb(255, 255, 255); 
+  display: inline-block;
+}
+
+#topBtn {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed/sticky position */
+  bottom: 20px; /* Place the button at the bottom of the page */
+  right: 30px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  border: 1px solid var(--color-secondary); /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color: transparent; /* Set a background color */
+  color: var(--color-secondary); /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 15px; /* Some padding */
+  border-radius: 10px; /* Rounded corners */
+  font-size: 18px; /* Increase font size */
+}
+
+#topBtn:hover, #topBtn:hover i {
+  background-color: var(--color-secondary); /* Add a dark-grey background on hover */
+  color: var(--color-dark);
+}
+
+.fa-caret-up {
+  color: var(--color-secondary);
+  padding-left: 1rem;
+}
+
+/* ///////////////// playlist cards //////////////// */
+
+#root {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.container {
+  display: flex;
+  flex-flow: column wrap;
+}
+
+.card {
+  display: flex;
+  flex-direction: row;
+  margin: 1rem;
+  background: var(--color-dark);
+  /* box-shadow: 2px 4px 25px rgba(0, 0, 0, 0.1); */
+  border: 1px solid grey;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all .2s linear;
+}
+.card:hover {
+  /* box-shadow: 2px 8px 45px rgba(0, 0, 0, 0.15); */
+  border: 1px solid grey;
+  background: var(--color-tertiary);
+  transform: translate3D(0, -2px, 0);
+  /* -webkit-box-shadow: 5px 5px 15px 5px #66FCF1;  */
+/* box-shadow: 5px 5px 15px 5px #66FCF1; */
+}
+
+.card-title, .card-owner, .card-description {
+  text-align: center;
+}
+
+.card-title {
+  padding: 1.5rem 2.5rem;
+  margin: 0 0 2rem 0;
+  font-size: 1.5rem;
+  color: var(--color-light);
+}
+
+.card-owner {
+  font-family: var(--font-base);
+  font-weight: 400;
+}
+
+.card-description {
+  padding: 0 2.5rem 2.5rem;
+    margin: 0;
+}
+
+img {
+  display: block;
+  /* margin: 1rem auto; */
+  max-width: 100%;
+  height: 100px;
+}
+
+@media screen and (min-width: 600px) {
+  .card {
+    flex: 1 1 calc(50% - 2rem);
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .card {
+    flex: 1 1 calc(33% - 2rem);
+  }
+}
+
+/* ////// generator & canvas /////// */
+
+.generator {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+}
+
+.generator-container {
+  /* max-width: 50vw; */
+  grid-column: 2;
+}
+
+.tools-container {
   display: flex;
   flex-flow: column wrap;
   max-width: 50%;
+  margin: var(--size-700);
 }
 
 #canvas {
   width: 300;
   height: 300;
   background: white;
+  /* border: 1px solid black; */
+  /* box-shadow: 2px 8px 45px rgba(0, 0, 0, 0.15); */
   float: left;
+  margin: var(--size-700);
+}
+
+.label {
+  opacity:1;
+  border-radius:0;
+  margin:0 2em;
+  /* text-align: center; */
+  text-decoration: none;
+  display: inline-block;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
 }
 
 select {
 	font-size: 30px;
 }
 
-.icons:before {
-  display: inline-block;
-  position: relative;
-  font-style: normal;
-  font-variant: normal;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
+.icons {
+  opacity: 0;
+  width: 0;
+  margin: 0;
+  padding: 0;
 }
 
-#left:before {
-    content: "\f036";
+.fa-align-left, .fa-align-center, .fa-align-right {
+  padding: 12px;
+  background: var(--color-light);
+  color: black;
+  border: 1px solid black;
 }
 
-#center:before  {
-    content: "\f037";
+.icons + i {
+cursor: pointer;
 }
 
-#right:before {
-    content: "\f038";
+.icons + i:hover {
+  background: #eee;
 }
 
-/* ///////////////////////////////// */
-
-.container {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.card {
-  margin: 1rem;
+.icons:checked + i {
+  color: black;
   background: white;
-  box-shadow: 2px 4px 25px rgba(0, 0, 0, .1);
-  border-radius: 12px;
-  overflow: hidden;
-  transition: all .2s linear;
+  border: 2px solid var(--color-secondary);
 }
 
-.card:hover {
-  box-shadow: 2px 8px 45px rgba(0, 0, 0, .15);
-  transform: translate3D(0, -2px, 0);
-}
