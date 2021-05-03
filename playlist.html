@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles/styles.css">
   <title>Playlist Select</title>
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
   </head>
   <body>
     <h1> Playlist Select</h1>
@@ -27,15 +28,16 @@
     <div id="root"></div>
 
   <script>
-
-    fetch('http://3.12.147.218:8000/spotify/is_authenticated')
+    fetch('https://fractalist.herokuapp.com/spotify/is_authenticated')
     .then((res) => res.json())
     .then((data) => {
       if  (!data.status) {
-        fetch('http://3.12.147.218:8000/spotify/get_auth_url')
+        console.log('grrr');
+        window.location.replace('https://fractalist.herokuapp.com/spotify/get_auth_url')
+        console.log('are you broken') 
     }
       else{
-        fetch('http://3.12.147.218:8000/spotify/get_playlists').then((res) => res.json())
+        fetch('https://fractalist.herokuapp.com/spotify/get_playlists').then((res) => res.json())
     .then((data) => {
       console.log(data);
     })}
