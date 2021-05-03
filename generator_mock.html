@@ -11,7 +11,7 @@
   <!-- fractal_controller immediately invokes fractal -->
   <script src="scripts/fractal_controller.js" defer></script>
   <!-- scripts.js controls canvas functions -->
-  <script src="scripts/scripts.js" defer></script> 
+  <script src="scripts/scripts.js" defer></script>
   <title>fractalist | Spotify Cover Generator</title>
 </head>
 
@@ -19,53 +19,43 @@
   <header>
     <h1>fractalist</h1>
   </header>
+  <main class="generator">
+    <div class="generator-container">
+      <canvas width="300" height="300" id="canvas"></canvas>
 
-  <nav>
-    <ul>
-      <li>
-        <a href="login.html">Generator</a>
-      </li>
-      <li>
-        <a>How It Works</a>
-      </li>
-      <li>
-        <a>Design Documentation</a>
-      </li>
-    </ul>
-  </nav>
-
-  <main>
-
-    <canvas width="300" height="300" id="canvas"></canvas>
-    <div class="container">
-      <input type="text" id="input"></input>
-      <select id="select"></select>
-      <div>
-        <label for="slider">Font Size:</label>
-        <input type="range" name="slider" min="12" max="96" value="42" class="slider" id="fontSize">
-        <p class="label"> <span id="value"> </span>px </p>
+      <div class="cent"></div>
+      <div class="tools-container">
+        <label for="playlist-title">Text</label>
+        <input type="text" name="playlist-title" id="input"></input>
+        <label for="font-select">Font</label>
+        <select name="font-select" id="select"></select>
+        <div>
+          <label for="slider">Font Size:</label>
+          <input type="range" name="slider" min="12" max="96" value="42" class="slider" id="fontSize">
+          <p class="label"> <span id="value"> </span>px </p>
+        </div>
+        <div>
+          <label for="left">
+            <input type="radio" name="align" value="left" class="icons" id="left">
+            <i class="fas fa-align-left"></i></label>
+          <label for="center">
+            <input type="radio" name="align" value="center" class="icons" id="center" checked>
+            <i class="fas fa-align-center"></i></label>
+          <label for="right">
+            <input type="radio" name="align" value="right" class="icons" id="right">
+            <i class="fas fa-align-right"></i></label>
+        </div>
       </div>
       <div>
-        <label for="left">
-          <input type="radio" name="align" value="left" class="icons" id="left">
-          <i class="fas fa-align-left"></i></label>
-        <label for="center">
-          <input type="radio" name="align" value="center" class="icons" id="center" checked>
-          <i class="fas fa-align-center"></i></label>
-        <label for="right">
-          <input type="radio" name="align" value="right" class="icons" id="right">
-          <i class="fas fa-align-right"></i></label>
+        <label for="vertical">Vertical Alignment:</label>
+        <input type="range" name="vertical" min="0" max="300" value="150" class="slider" id="vertical">
       </div>
-    </div>
-    <div>
-      <label for="vertical">Vertical Alignment:</label>
-      <input type="range" name="vertical" min="0" max="300" value="150" class="slider" id="vertical">
-    </div>
 
-    <button id="download">Download</button>
-    <button id="upload">Publish to Spotify</button>
+      <button class="myButton" id="download">Download</button>
+      <button class="myButton" id="upload">Publish to Spotify</button>
+    </div>
   </main>
-
 </body>
+<div>
 
 </html>
