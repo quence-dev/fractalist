@@ -1,3 +1,5 @@
+[Visit Fractalist](https://quence-dev.github.io/fractalist)
+
 Frontend design by Spencer Vilicic & Nick Mohler.
 
 Backend design by Quinn Relyea, Linsy Wang, Laurina Blaze, Sameer Chaturvedi, Kevin Guo, and Spencer Vilicic. Visit the [backend GitHub repository](https://github.com/relishyeah/YellowBrick/tree/main/backend).
