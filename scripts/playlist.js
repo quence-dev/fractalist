@@ -27,12 +27,7 @@ function load() {
     .then(response => response.json())
     .then(data => {
       console.log(data);
-      if (next !== null) {
-        endpoint = data.next;
-      } else {
-        document.body.removeChild(loadBtn);
-      }
-
+      
       for (const playlist of data.items) {
         //create HTML elements
         const card = document.createElement("div");
@@ -67,6 +62,13 @@ function load() {
           a.click();
           document.body.removeChild(a);
         })
+
+        //Remove load more button if there's no more playlists
+        if (data.next !== null) {
+          endpoint = data.next;
+        } else {
+          document.body.removeChild(loadBtn);
+        }
       }
     })
     .catch(console.error);
