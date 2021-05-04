@@ -2,6 +2,11 @@
 /////////// Elements & Variables ///////////
 const c = document.getElementById("canvas");
 const ctx = c.getContext("2d");
+const bgc = document.getElementById("bgcanvas");
+const bgctx = bgc.getContext("2d");
+
+let backgroundImage = new Image();
+backgroundImage.src = "./resources/fractal.jpeg";
 
 const select = document.getElementById("select");
 const input = document.getElementById("input");
@@ -70,8 +75,13 @@ download.addEventListener("click", downloadImg);
 upload.addEventListener("click", uploadImg);
 
 //////////////////Default canvas//////////////////
+backgroundImage.onload = () => {
+  bgctx.drawImage(backgroundImage, 0, 0);
+}
+bgctx.fillRect(0, 0, c.width, c.height);
 ctx.font = "30px Arial";
 ctx.textAlign = "center";
+ctx.fillStyle = "white";
 ctx.fillText(text, c.width / 2, c.height / 2);
 
 //////////////////Methods//////////////////
@@ -88,8 +98,6 @@ function checkAlignment() {
 function clearCanvas () {
     ctx.clearRect(0, 0, 300, 300);
     ctx.restore();
-    ctx.fillStyle = "white";
-    ctx.fillRect(0, 0, c.width, c.height);
 }
 
 function updateText() {
@@ -139,7 +147,7 @@ slider.oninput = function () {
 };
 
 vertical.oninput = function () {
-  verticalVal = this.value;
+  verticalVal = 300 - this.value;
   updateText();
 }
 

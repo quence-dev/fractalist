@@ -17,23 +17,31 @@
 
 <body>
   <header>
-    <h1>fractalist</h1>
+    <a href="index.html" class="no-border">
+      <h1>fractalist</h1>
+    </a>
+    <h2>Customize your playlist cover and upload straight to spotify.</h2>
   </header>
   <main class="generator">
     <div class="generator-container">
-      <canvas width="300" height="300" id="canvas"></canvas>
+      <div class="parent">
+        <canvas width="300" height="300" id="bgcanvas"></canvas>
+        <div class="child">
+          <canvas width="300" height="300" id="canvas"></canvas>
+        </div>
+      </div>
 
       <div class="tools-container">
-        <label for="playlist-title">Text</label>
-        <input type="text" name="playlist-title" id="input"></input>
-        <label for="font-select">Font</label>
-        <select name="font-select" id="select"></select>
-        <div>
+        <label for="playlist-title" class="gen-layout">Text</label>
+        <input type="text" name="playlist-title" id="input" class="gen-layout"></input>
+        <label for="font-select" class="gen-layout">Font</label>
+        <select name="font-select" id="select" class="gen-layout"></select>
+        <div class="gen-layout">
           <label for="slider">Font Size:</label>
           <input type="range" name="slider" min="12" max="96" value="42" class="slider" id="fontSize">
-          <p class="label"> <span id="value"> </span>px </p>
+          <p class="pxCounter"> <span id="value"> </span>px </p>
         </div>
-        <div>
+        <div class="gen-layout">
           <label for="left">
             <input type="radio" name="align" value="left" class="icons" id="left">
             <i class="fas fa-align-left"></i></label>
@@ -44,14 +52,17 @@
             <input type="radio" name="align" value="right" class="icons" id="right">
             <i class="fas fa-align-right"></i></label>
         </div>
-      </div>
-      <div>
-        <label for="vertical">Vertical Alignment:</label>
-        <input type="range" name="vertical" min="0" max="300" value="150" class="slider" id="vertical">
+        <div class="gen-layout">
+          <label for="vertical">Vertical Alignment:</label>
+          <input type="range" name="vertical" min="0" max="300" value="150" class="slider" id="vertical">
+        </div>
+        <div class="gen-layout">
+          <button class="myButton" id="download">Download<i class="fas fa-file-download"></i></button>
+          <button class="myButton" id="upload">Publish to Spotify<i class="fas fa-file-upload"></i></button>
+        </div>
       </div>
 
-      <button class="myButton" id="download">Download</button>
-      <button class="myButton" id="upload">Publish to Spotify</button>
+
     </div>
   </main>
 </body>
