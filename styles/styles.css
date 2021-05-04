@@ -319,7 +319,7 @@ p {
   color: var(--color-dark);
 }
 
-.myButton:disabled, .myButton:disabled:hover {
+.myButton:disabled, .myButton:hover:disabled {
   color: grey;
   border: 1px solid grey;
 }
