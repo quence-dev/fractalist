@@ -64,7 +64,7 @@ function load() {
         })
       }
     })
-    .then(() => { //must be added to async chain
+    .then(data => { //must be added to async chain
       //Remove load more button if there's no more playlists
       if (data.next !== null) {
         endpoint = data.next;
