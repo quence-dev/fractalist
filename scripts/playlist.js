@@ -62,8 +62,8 @@ fetch('https://api.spotify.com/v1/me/playlists', {
   })
   .catch(console.error);
 
-function load() {
-  fetch(endpoint, {
+function loadMore() {
+  fetch(next, {
     headers:
     {
       'Accept': 'application/json',
