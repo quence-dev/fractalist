@@ -119,15 +119,14 @@ function loadMore() {
           a.click();
           document.body.removeChild(a);
         });
-
-        if (numOfLoads <= 0) {
-          loadBtn.setAttribute("visibility", "none");
-        }
       }
     })
     .catch(console.error);
 }
 
+if (numOfLoads <= 0) {
+  loadBtn.setAttribute("visibility", "none");
+}
 
   // fetch('resources/mock.json')
   // .then(response => response.json())
