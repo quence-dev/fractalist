@@ -239,6 +239,12 @@ p {
   font-size: var(--size-500);
 }
 
+
+#about h3 {
+  text-align: center;
+}
+
+
 .colors-container {
   display: flex;
   flex-flow: row wrap;  
@@ -342,6 +348,7 @@ p {
 .card {
   display: flex;
   flex-direction: row;
+  align-items: center;
   margin: 1rem;
   background: var(--color-dark);
   /* box-shadow: 2px 4px 25px rgba(0, 0, 0, 0.1); */
@@ -360,12 +367,13 @@ p {
 }
 
 .card-title, .card-owner, .card-description {
-  text-align: center;
+  text-align: left;
+  border: 1px solid red;
 }
 
 .card-title {
-  padding: 1.5rem 2.5rem;
-  margin: 0 0 2rem 0;
+  /* padding: 1.5rem 2.5rem; */
+  /* margin: 0 0 2rem 0; */
   font-size: 1.5rem;
   color: var(--color-light);
 }
@@ -376,7 +384,7 @@ p {
 }
 
 .card-description {
-  padding: 0 2.5rem 2.5rem;
+  /* padding: 0 2.5rem 2.5rem; */
     margin: 0;
 }
 
@@ -384,7 +392,8 @@ img {
   display: block;
   /* margin: 1rem auto; */
   max-width: 100%;
-  height: 100px;
+  height: clamp(50px,100px,400px);
+  aspect-ratio: 1 / 1;
 }
 
 @media screen and (min-width: 600px) {
