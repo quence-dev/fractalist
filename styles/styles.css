@@ -319,6 +319,11 @@ p {
   color: var(--color-dark);
 }
 
+.myButton:disabled, .myButton:disabled:hover {
+  color: grey;
+  border: 1px solid grey;
+}
+
 .fa-caret-up {
   color: var(--color-secondary);
   padding-left: 1rem;
