@@ -75,9 +75,9 @@ function loadMore() {
     .then(data => {
       console.log(data);
       next = data.next;
-      // if (endpoint == null) {
-      //   loadBtn.setAttribute("visibility", "none");
-      // }
+      if (next == null) {
+        loadBtn.setAttribute("visibility", "none");
+      }
 
       for (const playlist of data.items) {
         //create HTML elements
