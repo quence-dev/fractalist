@@ -62,13 +62,14 @@ function load() {
           a.click();
           document.body.removeChild(a);
         })
-
-        //Remove load more button if there's no more playlists
-        if (data.next !== null) {
-          endpoint = data.next;
-        } else {
-          document.body.removeChild(loadBtn);
-        }
+      }
+    })
+    .then(() => { //must be added to async chain
+      //Remove load more button if there's no more playlists
+      if (data.next !== null) {
+        endpoint = data.next;
+      } else {
+        document.body.removeChild(loadBtn);
       }
     })
     .catch(console.error);
