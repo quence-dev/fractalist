@@ -6,7 +6,7 @@ app.appendChild(container);
 
 const loadBtn = document.createElement("button");
 loadBtn.setAttribute("class", "myButton");
-loadBtn.textContent = "Load More";
+loadBtn.appendChild(document.createTextNode('Load More'));
 loadBtn.addEventListener("click", load);
 document.body.appendChild(loadBtn);
 
@@ -71,6 +71,8 @@ function load() {
     })
     .catch(console.error);
 }
+
+load();
 
   // fetch('resources/mock.json')
   // .then(response => response.json())
