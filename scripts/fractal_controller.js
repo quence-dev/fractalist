@@ -1,3 +1,47 @@
+//code for endpoint
+const params = new URLSearchParams(window.location.search);
+var code = (params.get("code"));
+var playlist_id = (params.get("playlist"));
+console.log(code);
+console.log(playlist_id);
+
+fetch("https://api.spotify.com/v1/playlists/37i9dQZF1EM7W3MQyBRHnw/tracks?market=US&fields=items(track(id))&limit=100&offset=0", {
+  headers:
+  {
+    'Accept': 'application/json',
+    'Content-Type': 'application/json',
+    'Authorization': 'Bearer ' + code
+  }
+})
+  .then(response => response.json())
+  .then(data => {
+    var tracks = '';
+    for (i = 0; i < data.items.length; i++) {
+      tracks += (data.items[i]['track']['id']) + '%2C';
+    }
+    var tracks = tracks.substring(0,tracks.length-3)
+  })
+  .catch(console.error);
+// These need to be nested, tracks needs to be from the earlier call
+//this one is an example
+var tracks = '4JpKVNYnVcJ8tuMKjAj50A%2C2NRANZE9UCmPAS5XVbXL40%2C24JygzOLM0EmRQeGtFcIcG';
+  fetch('https://api.spotify.com/v1/audio-features?ids='+ tracks,  {
+    headers:
+    {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + code
+    }
+  })
+    .then(response => response.json())
+    .then(data => {
+      console.log(data);
+      console.log('hello');
+    })
+    .catch(console.error);
+
+
+//end endpoint code
 (function () {
   var canvas = document.getElementById("canvas");
   const refreshBtn = document.getElementById("refresh");
