@@ -29,6 +29,7 @@ fetch('https://api.spotify.com/v1/me/playlists', {
     console.log("Load equal to: " + numOfLoads);
     if (numOfLoads <= 0) {
       loadBtn.disabled = true;
+      loadBtn.setAttribute("display", "none");
     }
 
     for (const playlist of data.items) {
@@ -86,6 +87,7 @@ function loadMore() {
       next = data.next;
       if (numOfLoads <= 0) {
         loadBtn.disabled = true;
+        loadBtn.setAttribute("display", "none");
       }
 
       for (const playlist of data.items) {
