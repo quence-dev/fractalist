@@ -6,7 +6,7 @@ app.appendChild(container);
 
 const loadBtn = document.createElement("button");
 loadBtn.setAttribute("class", "myButton");
-loadBtn.textContent("Load More");
+loadBtn.textContent = "Load More";
 loadBtn.addEventListener("click", load);
 document.body.appendChild(loadBtn);
 
