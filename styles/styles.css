@@ -292,12 +292,12 @@ p {
 .myButton {
   color: var(--color-secondary);
   outline: none;
-  font-size: 16px;
-  line-height: 16px;
-  padding: 6px; 
-  border-radius: 10px; 
+  font-size: var(--size-400);
+  padding: 12px; 
   font-family: var(--font-display);
   background-color: transparent;
+  margin-right: 12px;
+  border-radius: 10px;
   /* box-shadow: rgba(255, 255, 255, 0.38) 5px 5px 15px 5px inset; */
   border: 1px solid var(--color-secondary);
   display: inline-block;
@@ -415,18 +415,16 @@ p {
 
 .generator {
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
+  place-content: center;
 }
 
 .generator-container {
-  grid-column: 2;
+  display: grid;
 }
-
-.tools-container {
-  display: flex;
-  flex-flow: column wrap;
-  max-width: 50%;
-  margin: var(--size-700);
+@media screen and (min-width: 900px) {
+  .generator-container {
+    grid-template-columns: 1fr 2fr;
+  }
 }
 
 #canvas {
@@ -435,19 +433,30 @@ p {
   background: white;
   /* border: 1px solid black; */
   /* box-shadow: 2px 8px 45px rgba(0, 0, 0, 0.15); */
-  float: left;
   margin: var(--size-700);
 }
+@media screen and (min-width: 900px) {
+  #canvas {
+    grid-column: 1;
+  }
+}
 
-.label {
-  opacity:1;
-  border-radius:0;
-  margin:0 2em;
+.tools-container {
+  display: flex;
+  flex-flow: column wrap;
+  /* max-width: 50%; */
+  margin: var(--size-700);
+}
+@media screen and (min-width: 900px) {
+  .tools-container {
+    grid-column: 2;
+  }
+}
+
+.pxCounter {
+  margin: 0 2em;
   /* text-align: center; */
-  text-decoration: none;
-  display: inline-block;
-  -webkit-transition: .2s;
-  transition: opacity .2s;
+  display: inline;
 }
 
 select {
@@ -461,11 +470,15 @@ select {
   padding: 0;
 }
 
+.fa-file-download, .fa-file-upload {
+  padding-left: 12px;
+}
+
 .fa-align-left, .fa-align-center, .fa-align-right {
   padding: 12px;
-  background: none;
-  color: var(--color-secondary);
-  border: 1px solid var(--color-secondary);
+  background: white;
+  color: var(--color-dark);
+  border: 2px solid white;
 }
 
 .icons + i {
@@ -473,8 +486,11 @@ cursor: pointer;
 }
 
 .icons:checked + i, .icons + i:hover {
-  color: var(--color-dark);
-  background: var(--color-secondary);
-  border: 2px solid var(--color-secondary);
+  color: white;
+  background: none;
+  border: 2px solid white;
 }
 
+.gen-layout {
+  margin-bottom: 1rem;
+}
