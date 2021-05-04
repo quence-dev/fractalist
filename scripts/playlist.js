@@ -27,6 +27,9 @@ fetch('https://api.spotify.com/v1/me/playlists', {
 
     numOfLoads = Math.floor(data.total / 20) - 1; //determine number of times new playlists can be loaded
     console.log("Load equal to: " + numOfLoads);
+    if (numOfLoads <= 0) {
+      loadBtn.disabled = true;
+    }
 
     for (const playlist of data.items) {
       //create HTML elements
@@ -81,9 +84,9 @@ function loadMore() {
     .then(data => {
       console.log(data);
       next = data.next;
-      // if (next == null) {
-      //   loadBtn.setAttribute("visibility", "none");
-      // }
+      if (numOfLoads <= 0) {
+        loadBtn.disabled = true;
+      }
 
       for (const playlist of data.items) {
         //create HTML elements
@@ -122,10 +125,6 @@ function loadMore() {
       }
     })
     .catch(console.error);
-
-    if (numOfLoads <= 0) {
-      loadBtn.setAttribute("display", "none");
-    }
 }
 
   // fetch('resources/mock.json')
