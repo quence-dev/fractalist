@@ -1,25 +1,26 @@
 //generates HTML for playlist webpage
-
-//here is list of playlists
-const params = new URLSearchParams(window.location.search);
-    var code = (params.get("code"));
-    console.log(code);
-    fetch('https://api.spotify.com/v1/me/playlists',{
-    headers : 
-    {'Accept': 'application/json',
-    'Content-Type': 'application/json',
-    'Authorization': 'Bearer ' + code
-    }})
-    .then((res) => res.json())
-    .then((data) => {
-      var playlists = data
-      console.log(data)
-    });
-
 const app = document.getElementById("root");
 const container = document.createElement("div");
 container.setAttribute("class", "container");
 app.appendChild(container);
+
+//here is list of playlists
+const params = new URLSearchParams(window.location.search);
+var code = (params.get("code"));
+console.log(code);
+fetch('https://api.spotify.com/v1/me/playlists', {
+  headers:
+  {
+    'Accept': 'application/json',
+    'Content-Type': 'application/json',
+    'Authorization': 'Bearer ' + code
+  }
+})
+  .then((res) => res.json())
+  .then((data) => {
+    var playlists = data
+    console.log(data)
+  });
 
 fetch('resources/mock.json')
   .then(response => response.json())
@@ -28,14 +29,14 @@ fetch('resources/mock.json')
     for (const playlist of data.items) {
       // check whether playlist description is empty
       let descriptionExists = (playlist.description === "") ? false : true;
-      
+
       //create HTML elements
       const card = document.createElement("div");
       const h3 = document.createElement("h3");
       const h4 = document.createElement("h4");
       const p = document.createElement("p");
       const img = document.createElement("img");
-      
+
       //set classes
       card.setAttribute("class", "card");
       h3.setAttribute("class", "card-title");
@@ -65,10 +66,10 @@ fetch('resources/mock.json')
 
       //event for clicking card
       card.addEventListener("click", () => {
-          const a = document.createElement("a");
-          a.href = "generator_mock.html";
-          a.click();
-          document.body.removeChild(a);
+        const a = document.createElement("a");
+        a.href = "generator_mock.html";
+        a.click();
+        document.body.removeChild(a);
       })
     }
   })
