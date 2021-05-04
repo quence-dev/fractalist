@@ -6,13 +6,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles/styles.css">
+  <script src="scripts/scripts.js" defer></script>
   <script src="scripts/playlist.js" defer></script>
   <title>fractalist | Playlist Select</title>
   <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
   <!-- <script src="scripts/playlist.js" defer></script> -->
 </head>
 
-<body>
+<body class="full-page">
 
   <header>
     <a href="index.html" class="no-border">
@@ -23,8 +24,10 @@
 
   <div id="root"></div>
 
-  <button onclick="loadMore()" class="myButton" id="loadBtn">Load More</button>
-
+  <div class="load-btn-layout">
+    <button onclick="loadMore()" class="myButton" id="loadBtn">Load More</button>
+  </div>
+  <button onclick="topFunction()" id="topBtn" class="myButton" title="Go to top">Top<i class="fas fa-caret-up"></i></button>
 </body>
 
 </html>

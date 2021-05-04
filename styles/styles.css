@@ -324,6 +324,15 @@ p {
   border: 1px solid grey;
 }
 
+#loadBtn {
+  width: 100%;
+  margin: auto;
+}
+.load-btn-layout {
+  display: grid;
+  place-content: center;
+}
+
 .fa-caret-up {
   color: var(--color-secondary);
   padding-left: 1rem;
@@ -368,7 +377,7 @@ p {
   margin-left: 2rem;
 }
 
-.card-title, .card-owner, .card-description {
+.card-title, .card-owner {
   text-align: left;
 }
 
