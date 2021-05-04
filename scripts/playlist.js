@@ -9,9 +9,9 @@ const loadBtn = document.getElementById("loadBtn");
 //here is list of playlists
 const params = new URLSearchParams(window.location.search);
 var code = (params.get("code"));
-let endpoint = 'https://api.spotify.com/v1/me/playlists'; /* initial endpoint */
+let next = '';
 
-fetch(endpoint, {
+fetch('https://api.spotify.com/v1/me/playlists', {
   headers:
   {
     'Accept': 'application/json',
@@ -22,7 +22,7 @@ fetch(endpoint, {
   .then(response => response.json())
   .then(data => {
     console.log(data);
-    endpoint = data.next;
+    next = data.next;
 
     for (const playlist of data.items) {
       //create HTML elements
@@ -74,7 +74,7 @@ function load() {
     .then(response => response.json())
     .then(data => {
       console.log(data);
-      endpoint = data.next;
+      next = data.next;
       // if (endpoint == null) {
       //   loadBtn.setAttribute("visibility", "none");
       // }
