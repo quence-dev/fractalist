@@ -25,7 +25,7 @@ fetch('https://api.spotify.com/v1/me/playlists', {
     console.log(data);
     next = data.next;
 
-    numOfLoads = Math.floor(data.total / 20); //determine number of times new playlists can be loaded
+    numOfLoads = Math.floor(data.total / 20) - 1; //determine number of times new playlists can be loaded
     console.log("Load equal to: " + numOfLoads);
 
     for (const playlist of data.items) {
@@ -67,11 +67,8 @@ fetch('https://api.spotify.com/v1/me/playlists', {
   .catch(console.error);
 
 function loadMore() {
-  numOfLoads = numOfLoads--;
+  numOfLoads = numOfLoads - 1;
   console.log("Load decremented to: " + numOfLoads);
-  if (numOfLoads < 0) {
-    loadBtn.setAttribute("visibility", "none");
-  } else {
     fetch(next, {
       headers:
       {
@@ -122,6 +119,10 @@ function loadMore() {
             a.click();
             document.body.removeChild(a);
           })
+
+          if(numOfLoads <= 0) {
+            loadBtn.setAttribute("visibility", "none");
+          }
         }
       })
       .catch(console.error);
