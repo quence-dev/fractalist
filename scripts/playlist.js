@@ -122,10 +122,10 @@ function loadMore() {
       }
     })
     .catch(console.error);
-}
 
-if (numOfLoads <= 0) {
-  loadBtn.setAttribute("visibility", "none");
+    if (numOfLoads <= 0) {
+      loadBtn.setAttribute("display", "none");
+    }
 }
 
   // fetch('resources/mock.json')
