@@ -65,8 +65,9 @@ fetch('resources/mock.json')
 
       //event for clicking card
       card.addEventListener("click", () => {
+          var playlist_id = 'some_id'
           const a = document.createElement("a");
-          a.href = "generator_mock.html";
+          a.href = "generator_mock.html?code=" +code +'&playlist=' + playlist_id;
           a.click();
           document.body.removeChild(a);
       })
