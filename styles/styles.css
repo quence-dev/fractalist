@@ -290,20 +290,16 @@ p {
 
 /* //////////////// Buttons ////////////////// */
 .myButton {
-  color: rgb(255, 255, 255);
+  color: var(--color-secondary);
+  outline: none;
   font-size: 16px;
   line-height: 16px;
   padding: 6px; 
   border-radius: 10px; 
   font-family: var(--font-display);
-  font-weight: normal; 
-  text-decoration: none; 
-  font-style: normal; 
-  font-variant: normal;
-  text-transform: none;
-  background-image: linear-gradient(45deg, rgb(15, 164, 164) 0%, rgb(94, 198, 203) 50%, rgb(27, 203, 177) 100%); 
-  box-shadow: rgba(255, 255, 255, 0.38) 5px 5px 15px 5px inset;
-  border: 1px solid rgb(255, 255, 255); 
+  background-color: transparent;
+  /* box-shadow: rgba(255, 255, 255, 0.38) 5px 5px 15px 5px inset; */
+  border: 1px solid var(--color-secondary);
   display: inline-block;
 }
 
@@ -318,12 +314,12 @@ p {
   background-color: transparent; /* Set a background color */
   color: var(--color-secondary); /* Text color */
   cursor: pointer; /* Add a mouse pointer on hover */
-  padding: 15px; /* Some padding */
+  padding: 1rem; /* Some padding */
   border-radius: 10px; /* Rounded corners */
-  font-size: 18px; /* Increase font size */
+  font-size: var(--size-500); /* Increase font size */
 }
 
-#topBtn:hover, #topBtn:hover i {
+#topBtn:hover, #topBtn:hover i, .myButton:hover {
   background-color: var(--color-secondary); /* Add a dark-grey background on hover */
   color: var(--color-dark);
 }
@@ -366,34 +362,41 @@ p {
 /* box-shadow: 5px 5px 15px 5px #66FCF1; */
 }
 
+.card-grid {
+  display: grid;
+  grid-template-rows: auto;
+  margin-left: 2rem;
+}
+
 .card-title, .card-owner, .card-description {
   text-align: left;
-  border: 1px solid red;
+}
+
+.card-img {
+  display: block;
+  max-width: 100%;
+  height: 10vw;
+  aspect-ratio: 1 / 1;
+  grid-row: 1 / span 2;
 }
 
 .card-title {
-  /* padding: 1.5rem 2.5rem; */
-  /* margin: 0 0 2rem 0; */
-  font-size: 1.5rem;
+  font-size: clamp(
+    var(--size-400),
+    12vw - 5rem,
+    var(--size-900)
+  );
   color: var(--color-light);
+  grid-row: 1;
+  grid-column: 2;
 }
 
 .card-owner {
   font-family: var(--font-base);
   font-weight: 400;
-}
-
-.card-description {
-  /* padding: 0 2.5rem 2.5rem; */
-    margin: 0;
-}
-
-img {
-  display: block;
-  /* margin: 1rem auto; */
-  max-width: 100%;
-  height: clamp(50px,100px,400px);
-  aspect-ratio: 1 / 1;
+  grid-column: 2;
+  grid-row: 2;
+  color: gray;
 }
 
 @media screen and (min-width: 600px) {
@@ -416,7 +419,6 @@ img {
 }
 
 .generator-container {
-  /* max-width: 50vw; */
   grid-column: 2;
 }
 
@@ -461,22 +463,18 @@ select {
 
 .fa-align-left, .fa-align-center, .fa-align-right {
   padding: 12px;
-  background: var(--color-light);
-  color: black;
-  border: 1px solid black;
+  background: none;
+  color: var(--color-secondary);
+  border: 1px solid var(--color-secondary);
 }
 
 .icons + i {
 cursor: pointer;
 }
 
-.icons + i:hover {
-  background: #eee;
-}
-
-.icons:checked + i {
-  color: black;
-  background: white;
+.icons:checked + i, .icons + i:hover {
+  color: var(--color-dark);
+  background: var(--color-secondary);
   border: 2px solid var(--color-secondary);
 }
 
