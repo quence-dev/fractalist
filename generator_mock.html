@@ -17,11 +17,19 @@
 
 <body>
   <header>
-    <h1>fractalist</h1>
+    <a href="index.html" class="no-border">
+      <h1>fractalist</h1>
+    </a>
+    <h2>Customize your playlist cover and upload straight to spotify.</h2>
   </header>
   <main class="generator">
     <div class="generator-container">
-      <canvas width="300" height="300" id="canvas"></canvas>
+      <div class="parent">
+        <canvas width="300" height="300" id="bgcanvas"></canvas>
+        <div class="child">
+          <canvas width="300" height="300" id="canvas"></canvas>
+        </div>
+      </div>
 
       <div class="tools-container">
         <label for="playlist-title" class="gen-layout">Text</label>
@@ -54,7 +62,7 @@
         </div>
       </div>
 
-      
+
     </div>
   </main>
 </body>

@@ -427,19 +427,28 @@ p {
   }
 }
 
-#canvas {
+#canvas, #bgcanvas {
   width: 300;
   height: 300;
-  background: white;
   /* border: 1px solid black; */
   /* box-shadow: 2px 8px 45px rgba(0, 0, 0, 0.15); */
   margin: var(--size-700);
 }
 @media screen and (min-width: 900px) {
-  #canvas {
+  #canvas, #bgcanvas {
     grid-column: 1;
   }
 }
+
+.parent {
+  position: relative;
+}
+.child {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 
 .tools-container {
   display: flex;
