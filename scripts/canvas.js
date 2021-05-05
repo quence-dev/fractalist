@@ -166,7 +166,7 @@ function downloadImg() {
       "background_url": bgc_url
     }
 
-    fetch('http://image-merger.herokuapp.com/api/v1.0/', {
+    fetch('https://image-merger.herokuapp.com/api/v1.0/', {
       method: 'POST', // or 'PUT'
       headers:
       {
@@ -181,8 +181,8 @@ function downloadImg() {
 
     // window.navigator.msSaveBlob(c.msToBlob(), "cover-image.png");
   } else {
-    let c_url = document.getElementById("canvas").toDataURL("image/jpeg");
-    let bgc_url = document.getElementById("bgcanvas").toDataURL("image/jpeg");
+    let c_url = document.getElementById("canvas").toDataURL("image/png");
+    let bgc_url = document.getElementById("bgcanvas").toDataURL("image/png");
 
     data =
     {
