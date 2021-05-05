@@ -220,17 +220,17 @@ function uploadImg() {
   //CODE HERE FOR SPOTIFY UPLOAD
 }
 
-fetch('http://image-merger.herokuapp.com/api/v1.0/', {
-  method: 'POST', // or 'PUT'
-  headers:
-  {
-    'Accept': 'application/json',
-    'Content-Type': 'application/json'
-  },
-  body: JSON.stringify(data),
-})
-  .then(response => response.json())
-  .then(data => console.log(data));
+// fetch('http://image-merger.herokuapp.com/api/v1.0/', {
+//   method: 'POST', // or 'PUT'
+//   headers:
+//   {
+//     'Accept': 'application/json',
+//     'Content-Type': 'application/json'
+//   },
+//   body: JSON.stringify(data),
+// })
+//   .then(response => response.json())
+//   .then(data => console.log(data));
 
 
 //Text wrap found here: https://www.html5canvastutorials.com/tutorials/html5-canvas-wrap-text-tutorial/#:~:text=To%20wrap%20text%20with%20HTML5,the%20next%20line%20should%20wrap.
