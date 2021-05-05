@@ -95,9 +95,9 @@ function checkAlignment() {
   }
 }
 
-function clearCanvas () {
-    ctx.clearRect(0, 0, 300, 300);
-    ctx.restore();
+function clearCanvas() {
+  ctx.clearRect(0, 0, 300, 300);
+  ctx.restore();
 }
 
 function updateText() {
@@ -105,12 +105,12 @@ function updateText() {
   let selection = document.getElementById("select").value;
   let saveText = document.getElementById("input").value;
   let fontSize = document.getElementById("fontSize").value;
-  
+
   checkAlignment();
 
   //clear canvas & set background to white
   clearCanvas();
-  
+
   //Restore font color
   ctx.fillStyle = "black";
   ctx.font = `${fontSize}px ${selection}`;
@@ -154,14 +154,60 @@ vertical.oninput = function () {
 function downloadImg() {
   // IE/Edge Support (PNG only)
   if (window.navigator.msSaveBlob) {
-    window.navigator.msSaveBlob(c.msToBlob(), "cover-image.png");
+    let c_blob = c.msToBlob();
+    let bgc_blob = bgc.msToBlob();
+
+    let c_url = URL.createObjectURL(c_blob);
+    let bgc_url = URL.createObjectURL(bgc_blob);
+
+    data =
+    {
+      "foreground_url": c_url,
+      "background_url": bgc_url
+    }
+
+    fetch('http://image-merger.herokuapp.com/api/v1.0/', {
+      method: 'POST', // or 'PUT'
+      headers:
+      {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data),
+    })
+      .then(response => response.json())
+      .then(data => console.log(data));
+
+
+    // window.navigator.msSaveBlob(c.msToBlob(), "cover-image.png");
   } else {
-    const a = document.createElement("a");
-    document.body.appendChild(a);
-    a.download = "cover-image.jpg";
-    a.href = document.getElementById("canvas").toDataURL("image/jpeg").replace("image/jpeg", "image/octet-stream");
-    a.click();
-    document.body.removeChild(a);
+    let c_url = document.getElementById("canvas").toDataURL("image/jpeg");
+    let bgc_url = document.getElementById("bgcanvas").toDataURL("image/jpeg");
+
+    data =
+    {
+      "foreground_url": c_url,
+      "background_url": bgc_url
+    }
+
+    fetch('http://image-merger.herokuapp.com/api/v1.0/', {
+      method: 'POST', // or 'PUT'
+      headers:
+      {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data),
+    })
+      .then(response => response.json())
+      .then(data => console.log(data));
+
+    // const a = document.createElement("a");
+    // document.body.appendChild(a);
+    // a.download = "cover-image.jpg";
+    // a.href = document.getElementById("canvas").toDataURL("image/jpeg").replace("image/jpeg", "image/octet-stream");
+    // a.click();
+    // document.body.removeChild(a);
   }
 
   const dataURI = document.getElementById("canvas").toDataURL("image/jpeg");
@@ -173,5 +219,18 @@ function uploadImg() {
   console.log(dataURI);
   //CODE HERE FOR SPOTIFY UPLOAD
 }
+
+fetch('http://image-merger.herokuapp.com/api/v1.0/', {
+  method: 'POST', // or 'PUT'
+  headers:
+  {
+    'Accept': 'application/json',
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify(data),
+})
+  .then(response => response.json())
+  .then(data => console.log(data));
+
 
 //Text wrap found here: https://www.html5canvastutorials.com/tutorials/html5-canvas-wrap-text-tutorial/#:~:text=To%20wrap%20text%20with%20HTML5,the%20next%20line%20should%20wrap.
