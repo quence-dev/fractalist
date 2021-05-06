@@ -1,29 +1,10 @@
 //code for endpoint
-
-
-//end endpoint code
-(function () {
   const params = new URLSearchParams(window.location.search);
-var code = (params.get("code"));
-var playlist_id = (params.get("playlist"));
+  var code = (params.get("code"));
+  var playlist_id = (params.get("playlist"));
 
 
-fetch("https://api.spotify.com/v1/playlists/"+playlist_id+"/tracks?market=US&fields=items(track(id))&limit=100&offset=0", {
-  headers:
-  {
-    'Accept': 'application/json',
-    'Content-Type': 'application/json',
-    'Authorization': 'Bearer ' + code
-  }
-})
-  .then(response => response.json())
-  .then(data => {
-    var tracks = '';
-    for (i = 0; i < data.items.length; i++) {
-      tracks += (data.items[i]['track']['id']) + '%2C';
-    }
-    var tracks = tracks.substring(0,tracks.length-3)
-    fetch('https://api.spotify.com/v1/audio-features?ids='+ tracks,  {
+  fetch("https://api.spotify.com/v1/playlists/" + playlist_id + "/tracks?market=US&fields=items(track(id))&limit=100&offset=0", {
     headers:
     {
       'Accept': 'application/json',
@@ -33,29 +14,43 @@ fetch("https://api.spotify.com/v1/playlists/"+playlist_id+"/tracks?market=US&fie
   })
     .then(response => response.json())
     .then(data => {
-      var avg_valence = 0;
-      var avg_energy = 0;
-      var mapping = {};
-      console.log(data.audio_features[0]['mode'])
-      for (i = 0; i < data.audio_features.length; i++) {
-        avg_valence += (data.audio_features[i]['valence'])/data.audio_features.length;
-        avg_energy += (data.audio_features[i]['energy'])/data.audio_features.length;
-
-        if (!mapping[data.audio_features[i]['mode']]) 
-        {mapping[data.audio_features[i]['mode']] = 0;
-        }
-        mapping[data.audio_features[i]['mode']] += 1
+      var tracks = '';
+      for (i = 0; i < data.items.length; i++) {
+        tracks += (data.items[i]['track']['id']) + '%2C';
       }
-      var mode_mode = parseInt(Object.keys(mapping).reduce(function(a, b){ return mapping[a] > mapping[b] ? a : b }));
-      console.log(avg_valence, avg_energy, mode_mode);
+      var tracks = tracks.substring(0, tracks.length - 3)
+      fetch('https://api.spotify.com/v1/audio-features?ids=' + tracks, {
+        headers:
+        {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer ' + code
+        }
+      })
+        .then(response => response.json())
+        .then(data => {
+          var avg_valence = 0;
+          var avg_energy = 0;
+          var mapping = {};
+          console.log(data.audio_features[0]['mode'])
+          for (i = 0; i < data.audio_features.length; i++) {
+            avg_valence += (data.audio_features[i]['valence']) / data.audio_features.length;
+            avg_energy += (data.audio_features[i]['energy']) / data.audio_features.length;
 
+            if (!mapping[data.audio_features[i]['mode']]) {
+              mapping[data.audio_features[i]['mode']] = 0;
+            }
+            mapping[data.audio_features[i]['mode']] += 1
+          }
+          var mode_mode = parseInt(Object.keys(mapping).reduce(function (a, b) { return mapping[a] > mapping[b] ? a : b }));
+          console.log(avg_valence, avg_energy, mode_mode);
+
+        })
     })
-  })
-  .catch(console.error);
+    .catch(console.error);
 
-
-
-
+//fractal controller
+(function () {
   var canvas = document.getElementById("canvas");
   const refreshBtn = document.getElementById("refresh");
   var fractal = new window.mandelbrotFractal.Fractal(canvas);
