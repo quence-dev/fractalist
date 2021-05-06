@@ -1,8 +1,10 @@
 //code for endpoint
   const params = new URLSearchParams(window.location.search);
-  var code = (params.get("code"));
-  var playlist_id = (params.get("playlist"));
-
+  let code = (params.get("code"));
+  let playlist_id = (params.get("playlist"));
+  let avg_valence = 0;
+  let avg_energy = 0;
+  let mode_mode = 1;
 
   fetch("https://api.spotify.com/v1/playlists/" + playlist_id + "/tracks?market=US&fields=items(track(id))&limit=100&offset=0", {
     headers:
@@ -29,8 +31,6 @@
       })
         .then(response => response.json())
         .then(data => {
-          var avg_valence = 0;
-          var avg_energy = 0;
           var mapping = {};
           console.log(data.audio_features[0]['mode'])
           for (i = 0; i < data.audio_features.length; i++) {
@@ -42,7 +42,7 @@
             }
             mapping[data.audio_features[i]['mode']] += 1
           }
-          var mode_mode = parseInt(Object.keys(mapping).reduce(function (a, b) { return mapping[a] > mapping[b] ? a : b }));
+          mode_mode = parseInt(Object.keys(mapping).reduce(function (a, b) { return mapping[a] > mapping[b] ? a : b }));
           console.log(avg_valence, avg_energy, mode_mode);
 
         })
@@ -120,6 +120,12 @@
     // by default (if this is omitted or false) the cartesian coordinates are
     // adjusted to match the ratio of the canvas width/height to avoid distortion
     distortion: true, // e.g. true
+
+    colors: {
+      valence: avg_valence,
+      energy: avg_energy,
+      mode: mode_mode,
+    }
   };
 
   fractal.update(options);

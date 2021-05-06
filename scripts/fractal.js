@@ -8,6 +8,9 @@
       window.mandelbrotFractal = {};
     }
     window.mandelbrotFractal.Fractal = Fractal;
+    let valence = 0;
+    let energy = 0;
+    let mode = 0;
   
     function Fractal(canvas){
       this.canvas = canvas;
@@ -40,6 +43,7 @@
         this.canvas.height = options.pxHeight;
       if (!options.distortion) this.alignCordsToCanvasRatio(); // by default this will run
       if (this.reDrawRequired(previousSettings)) this.draw();
+      if (options.colors) this.setColors(options.colors);
     };
   
   
@@ -162,6 +166,12 @@
       this.startCords = JSON.parse(JSON.stringify(this.cords));
       this.startMaxEscapeTime = this.maxEscapeTime;
     };
+
+    Fractal.prototype.setColors = function(colors) {
+      this.valence = colors.avg_valence;
+      this.energy = colors.avg_energy;
+      this.mode = colors.mode_mode;
+    }
   
   
     Fractal.prototype.alignCordsToCanvasRatio = function() {
@@ -288,30 +298,20 @@
     ///////////////////////////////////////////////////////////////////////////////
     Fractal.prototype.rgbNum = function(escapeTime){
       //check playlist values
-      // if (mode && valence >= 0.5 && energy >= 0.5) {
+      let light_dark = 255;
+      let black_white = 0;
+      let warm = 0;
+      let cool = 0;
+      if (mode) {
+        black_white = 255;
+      }
+      if (valence >= 0.5) {
         
-      // }
-      // if (mode && valence >= 0.5 && energy < 0.5) {
-        
-      // }
-      // if (mode && valence >= 0.5 && energy >= 0.5) {
-        
-      // }
-      // if (mode && valence >= 0.5 && energy < 0.5) {
-        
-      // }
-      // if (!mode && valence >= 0.5 && energy >= 0.5) {
-        
-      // }
-      // if (!mode && valence >= 0.5 && energy < 0.5) {
-        
-      // }
-      // if (!mode && valence >= 0.5 && energy >= 0.5) {
-        
-      // }
-      // if (!mode && valence >= 0.5 && energy < 0.5) {
-        
-      // }
+      }
+      if (energy < 0.5) {
+        light_dark = 127;
+      }
+
       
 
 
