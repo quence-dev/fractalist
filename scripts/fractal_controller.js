@@ -51,7 +51,7 @@
 
 //fractal controller
 (function () {
-  var canvas = document.getElementById("canvas");
+  var canvas = document.getElementById("bgcanvas");
   const refreshBtn = document.getElementById("refresh");
   var fractal = new window.mandelbrotFractal.Fractal(canvas);
   console.log(fractal);
@@ -74,10 +74,10 @@
 
     // draw the fractal at these specific cartesian coordinates
     cords: {
-      xCartMin: -2.1, // e.g. -2.1
-      xCartMax: 0.8, // e.g. 0.8,
-      yCartMin: -1.2, // e.g. -1.2,
-      yCartMax: 1.2, // e.g. 1.2
+      xCartMin: -1, // e.g. -2.1
+      xCartMax: 5, // e.g. 0.8,
+      yCartMin: -1, // e.g. -1.2,
+      yCartMax: 4, // e.g. 1.2
     },
 
     // set the maximum escape time
