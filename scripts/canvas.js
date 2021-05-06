@@ -1,4 +1,6 @@
 // Parent JavaScript file for use with spotify cover generator site
+import mergeImages from './node_modules/merge-images';
+
 /////////// Elements & Variables ///////////
 const c = document.getElementById("canvas");
 const ctx = c.getContext("2d");
@@ -160,13 +162,13 @@ function downloadImg() {
     let c_url = URL.createObjectURL(c_blob);
     let bgc_url = URL.createObjectURL(bgc_blob);
 
-    data =
+    let data =
     {
       "foreground_url": c_url,
       "background_url": bgc_url
     }
 
-    fetch('https://image-merger.herokuapp.com/api/v1.0/', {
+    fetch('https://unpkg.com/merge-images', {
       method: 'POST', // or 'PUT'
       headers:
       {
@@ -184,13 +186,13 @@ function downloadImg() {
     let c_url = document.getElementById("canvas").toDataURL("image/png");
     let bgc_url = document.getElementById("bgcanvas").toDataURL("image/png");
 
-    data =
+    let data =
     {
       "foreground_url": c_url,
       "background_url": bgc_url
     }
 
-    fetch('http://image-merger.herokuapp.com/api/v1.0/', {
+    fetch('https://unpkg.com/merge-images', {
       method: 'POST', // or 'PUT'
       headers:
       {
@@ -219,18 +221,6 @@ function uploadImg() {
   console.log(dataURI);
   //CODE HERE FOR SPOTIFY UPLOAD
 }
-
-// fetch('http://image-merger.herokuapp.com/api/v1.0/', {
-//   method: 'POST', // or 'PUT'
-//   headers:
-//   {
-//     'Accept': 'application/json',
-//     'Content-Type': 'application/json'
-//   },
-//   body: JSON.stringify(data),
-// })
-//   .then(response => response.json())
-//   .then(data => console.log(data));
 
 
 //Text wrap found here: https://www.html5canvastutorials.com/tutorials/html5-canvas-wrap-text-tutorial/#:~:text=To%20wrap%20text%20with%20HTML5,the%20next%20line%20should%20wrap.
