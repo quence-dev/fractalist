@@ -156,60 +156,20 @@ vertical.oninput = function () {
 function downloadImg() {
   // IE/Edge Support (PNG only)
   if (window.navigator.msSaveBlob) {
-    let c_blob = c.msToBlob();
-    let bgc_blob = bgc.msToBlob();
-
-    let c_url = URL.createObjectURL(c_blob);
-    let bgc_url = URL.createObjectURL(bgc_blob);
-
-    let data =
-    {
-      "foreground_url": c_url,
-      "background_url": bgc_url
+    // IE/Edge Support (PNG only)
+    if (window.navigator.msSaveBlob) {
+      window.navigator.msSaveBlob(c.msToBlob(), "cover-image.png");
+    } else {
+      const a = document.createElement("a");
+      document.body.appendChild(a);
+      a.download = "cover-image.jpg";
+      a.href = document.getElementById("canvas").toDataURL("image/jpeg").replace("image/jpeg", "image/octet-stream");
+      a.click();
+      document.body.removeChild(a);
     }
 
-    fetch('https://unpkg.com/merge-images', {
-      method: 'POST', // or 'PUT'
-      headers:
-      {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(data),
-    })
-      .then(response => response.json())
-      .then(data => console.log(data));
-
-
-    // window.navigator.msSaveBlob(c.msToBlob(), "cover-image.png");
-  } else {
-    let c_url = document.getElementById("canvas").toDataURL("image/png");
-    let bgc_url = document.getElementById("bgcanvas").toDataURL("image/png");
-
-    let data =
-    {
-      "foreground_url": c_url,
-      "background_url": bgc_url
-    }
-
-    fetch('https://unpkg.com/merge-images', {
-      method: 'POST', // or 'PUT'
-      headers:
-      {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(data),
-    })
-      .then(response => response.json())
-      .then(data => console.log(data));
-
-    // const a = document.createElement("a");
-    // document.body.appendChild(a);
-    // a.download = "cover-image.jpg";
-    // a.href = document.getElementById("canvas").toDataURL("image/jpeg").replace("image/jpeg", "image/octet-stream");
-    // a.click();
-    // document.body.removeChild(a);
+    const dataURI = document.getElementById("canvas").toDataURL("image/jpeg");
+    console.log(dataURI);
   }
 
   const dataURI = document.getElementById("canvas").toDataURL("image/jpeg");
