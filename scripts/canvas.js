@@ -154,49 +154,40 @@ vertical.oninput = function () {
 function downloadImg() {
   // IE/Edge Support (PNG only)
   if (window.navigator.msSaveBlob) {
-    // IE/Edge Support (PNG only)
-    if (window.navigator.msSaveBlob) {
-      window.navigator.msSaveBlob(c.msToBlob(), "cover-image.png");
-    } else {
-      const a = document.createElement("a");
-      document.body.appendChild(a);
-      a.download = "cover-image.jpg";
-      a.href = document.getElementById("canvas").toDataURL("image/jpeg").replace("image/jpeg", "image/octet-stream");
-      a.click();
-      document.body.removeChild(a);
-    }
-
-    const dataURI = document.getElementById("canvas").toDataURL("image/jpeg");
-    console.log(dataURI);
+    window.navigator.msSaveBlob(c.msToBlob(), "cover-image.png");
+  } else {
+    const a = document.createElement("a");
+    document.body.appendChild(a);
+    a.download = "cover-image.jpg";
+    a.href = document.getElementById("canvas").toDataURL("image/jpeg").replace("image/jpeg", "image/octet-stream");
+    a.click();
+    document.body.removeChild(a);
   }
-
-  const dataURI = document.getElementById("canvas").toDataURL("image/jpeg");
-  console.log(dataURI);
 }
 
 function uploadImg() {
   var dataURI = document.getElementById("bgcanvas").toDataURL("image/jpeg")
-  dataURI = dataURI.substring(26,dataURI.length);
+  dataURI = dataURI.substring(26, dataURI.length);
   console.log(dataURI);
   //CODE HERE FOR SPOTIFY UPLOAD
   const params = new URLSearchParams(window.location.search);
   var code = (params.get("code"));
   var playlist_id = (params.get("playlist"));
 
-fetch("https://api.spotify.com/v1/playlists/"+ playlist_id +"/images", {
-  method: 'PUT',
-  headers:
-  {
-    'Accept': 'image/jpeg',
-    'Content-Type': 'image/jpeg',
-    'Authorization': 'Bearer ' + code
-  },
-    body : dataURI
-})
-  .then(response => response.json())
-  .then(data => {
-	console.log(data)
-});
+  fetch("https://api.spotify.com/v1/playlists/" + playlist_id + "/images", {
+    method: 'PUT',
+    headers:
+    {
+      'Accept': 'image/jpeg',
+      'Content-Type': 'image/jpeg',
+      'Authorization': 'Bearer ' + code
+    },
+    body: dataURI
+  })
+    .then(response => response.json())
+    .then(data => {
+      console.log(data)
+    });
 }
 
 
