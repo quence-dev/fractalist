@@ -178,6 +178,24 @@ function uploadImg() {
   const dataURI = document.getElementById("canvas").toDataURL("image/jpeg");
   console.log(dataURI);
   //CODE HERE FOR SPOTIFY UPLOAD
+  const params = new URLSearchParams(window.location.search);
+  var code = (params.get("code"));
+  var playlist_id = (params.get("playlist"));
+
+fetch("https://api.spotify.com/v1/playlists/"+ playlist_id +"/images", {
+  method: 'PUT',
+  headers:
+  {
+    'Accept': 'application/json',
+    'Content-Type': 'image/jpeg',
+    'Authorization': 'Bearer ' + code
+  },
+    body : dataURI
+})
+  .then(response => response.json())
+  .then(data => {
+	console.log('Success')
+});
 }
 
 

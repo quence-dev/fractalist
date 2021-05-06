@@ -1,26 +1,5 @@
 //code for endpoint
 
-// 
-
-//This will always fail until we implement button click
-/*
-var image = '';
-fetch("https://api.spotify.com/v1/playlists/"+ playlist_id +"/images", {
-  method: 'PUT',
-  headers:
-  {
-    'Accept': 'application/json',
-    'Content-Type': 'image/jpeg',
-    'Authorization': 'Bearer ' + code
-  },
-    body : image
-})
-  .then(response => response.json())
-  .then(data => {
-	console.log('help')
-});
-
-*/
 
 //end endpoint code
 (function () {
