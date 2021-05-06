@@ -63,7 +63,7 @@ fetch('https://api.spotify.com/v1/me/playlists', {
       card.addEventListener("click", () => {
         const playlist_id = playlist.id;
         const a = document.createElement("a");
-        a.href = "generator_mock.html?code=" + code + '&playlist='+playlist_id;
+        a.href = "generator.html?code=" + code + '&playlist='+playlist_id;
         a.click();
         document.body.removeChild(a);
       });
@@ -121,7 +121,7 @@ function loadMore() {
         card.addEventListener("click", () => {
           const playlist_id = playlist.id;
           const a = document.createElement("a");
-          a.href = "generator_mock.html?code=" + code + '&playlist='+playlist_id;
+          a.href = "generator.html?code=" + code + '&playlist='+playlist_id;
           a.click();
           document.body.removeChild(a);
         });
