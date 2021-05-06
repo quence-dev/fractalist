@@ -61,7 +61,7 @@ fetch('https://api.spotify.com/v1/me/playlists', {
 
       //event for clicking card
       card.addEventListener("click", () => {
-        const playlist_id = 'some_id'
+        const playlist_id = playlist.id;
         const a = document.createElement("a");
         a.href = "generator_mock.html?code=" + code + '&playlist='+playlist_id;
         a.click();
@@ -73,7 +73,6 @@ fetch('https://api.spotify.com/v1/me/playlists', {
 
 function loadMore() {
   numOfLoads = numOfLoads - 1;
-  console.log("Load decremented to: " + numOfLoads);
   fetch(next, {
     headers:
     {
@@ -120,7 +119,7 @@ function loadMore() {
 
         //event for clicking card
         card.addEventListener("click", () => {
-          const playlist_id = 'some_id'
+          const playlist_id = playlist.id;
           const a = document.createElement("a");
           a.href = "generator_mock.html?code=" + code + '&playlist='+playlist_id;
           a.click();
