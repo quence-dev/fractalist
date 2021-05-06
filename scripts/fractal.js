@@ -286,8 +286,35 @@
     //case 5: R=255, B=0, increase green from 0 to 255
     //case 6: R=255, G=255, increase blue from 0 to 255
     ///////////////////////////////////////////////////////////////////////////////
-  
     Fractal.prototype.rgbNum = function(escapeTime){
+      //check playlist values
+      // if (mode && valence >= 0.5 && energy >= 0.5) {
+        
+      // }
+      // if (mode && valence >= 0.5 && energy < 0.5) {
+        
+      // }
+      // if (mode && valence >= 0.5 && energy >= 0.5) {
+        
+      // }
+      // if (mode && valence >= 0.5 && energy < 0.5) {
+        
+      // }
+      // if (!mode && valence >= 0.5 && energy >= 0.5) {
+        
+      // }
+      // if (!mode && valence >= 0.5 && energy < 0.5) {
+        
+      // }
+      // if (!mode && valence >= 0.5 && energy >= 0.5) {
+        
+      // }
+      // if (!mode && valence >= 0.5 && energy < 0.5) {
+        
+      // }
+      
+
+
       if (escapeTime <= 2) {
         return [0, 0, 0];
       } else if (escapeTime === this.maxEscapeTime) {
@@ -312,7 +339,7 @@
           greenNum = 255;
           blueNum = Math.floor(256 / rgbIncrements) * remainNum;
           break;
-        case 2:
+        case 2: //black or white
           redNum = Math.floor(256 / rgbIncrements) * remainNum;
           greenNum = 255;
           blueNum = 255;
@@ -322,7 +349,7 @@
           greenNum = 0;
           blueNum = 255;
           break;
-        case 4:
+        case 4: //black or white
           redNum = 255;
           greenNum = Math.floor(256 / rgbIncrements) * remainNum;
           blueNum = 255;
@@ -332,7 +359,7 @@
           greenNum = Math.floor(256 / rgbIncrements) * remainNum;
           blueNum = 0;
           break;
-        case 6:
+        case 6: //black or white
           redNum = 255;
           greenNum = 255;
           blueNum = Math.floor(256 / rgbIncrements) * remainNum;
