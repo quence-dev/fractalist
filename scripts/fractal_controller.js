@@ -8,7 +8,7 @@ var code = (params.get("code"));
 var playlist_id = (params.get("playlist"));
 
 
-fetch("https://api.spotify.com/v1/playlists/37i9dQZF1EM7W3MQyBRHnw/tracks?market=US&fields=items(track(id))&limit=100&offset=0", {
+fetch("https://api.spotify.com/v1/playlists/"+playlist_id+"/tracks?market=US&fields=items(track(id))&limit=100&offset=0", {
   headers:
   {
     'Accept': 'application/json',
