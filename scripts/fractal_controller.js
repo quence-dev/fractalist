@@ -3,6 +3,7 @@
 // 
 
 //This will always fail until we implement button click
+/*
 var image = '';
 fetch("https://api.spotify.com/v1/playlists/"+ playlist_id +"/images", {
   method: 'PUT',
@@ -19,7 +20,7 @@ fetch("https://api.spotify.com/v1/playlists/"+ playlist_id +"/images", {
 	console.log('help')
 });
 
-
+*/
 
 //end endpoint code
 (function () {
