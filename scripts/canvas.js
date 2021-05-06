@@ -75,10 +75,10 @@ download.addEventListener("click", downloadImg);
 upload.addEventListener("click", uploadImg);
 
 //////////////////Default canvas//////////////////
-backgroundImage.onload = () => {
-  bgctx.drawImage(backgroundImage, 0, 0);
-}
-bgctx.fillRect(0, 0, c.width, c.height);
+// backgroundImage.onload = () => {
+//   bgctx.drawImage(backgroundImage, 0, 0);
+// }
+// bgctx.fillRect(0, 0, c.width, c.height);
 ctx.font = "30px Arial";
 ctx.textAlign = "center";
 ctx.fillStyle = "white";
