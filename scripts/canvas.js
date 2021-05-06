@@ -1,6 +1,4 @@
 // Parent JavaScript file for use with spotify cover generator site
-import mergeImages from './node_modules/merge-images';
-
 /////////// Elements & Variables ///////////
 const c = document.getElementById("canvas");
 const ctx = c.getContext("2d");
