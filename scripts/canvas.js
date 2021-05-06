@@ -175,7 +175,8 @@ function downloadImg() {
 }
 
 function uploadImg() {
-  const dataURI = document.getElementById("canvas").toDataURL("image/jpeg");
+  var dataURI = document.getElementById("bgcanvas").toDataURL("image/jpeg")
+  dataURI = dataURI.substring(26,dataURI.length);
   console.log(dataURI);
   //CODE HERE FOR SPOTIFY UPLOAD
   const params = new URLSearchParams(window.location.search);
@@ -186,7 +187,7 @@ fetch("https://api.spotify.com/v1/playlists/"+ playlist_id +"/images", {
   method: 'PUT',
   headers:
   {
-    'Accept': 'application/json',
+    'Accept': 'image/jpeg',
     'Content-Type': 'image/jpeg',
     'Authorization': 'Bearer ' + code
   },
@@ -194,7 +195,7 @@ fetch("https://api.spotify.com/v1/playlists/"+ playlist_id +"/images", {
 })
   .then(response => response.json())
   .then(data => {
-	console.log('Success')
+	console.log(data)
 });
 }
 
