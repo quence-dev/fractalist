@@ -1,9 +1,32 @@
 //code for endpoint
-const params = new URLSearchParams(window.location.search);
+
+// 
+
+//This will always fail until we implement button click
+var image = '';
+fetch("https://api.spotify.com/v1/playlists/"+ playlist_id +"/images", {
+  method: 'PUT',
+  headers:
+  {
+    'Accept': 'application/json',
+    'Content-Type': 'image/jpeg',
+    'Authorization': 'Bearer ' + code
+  },
+    body : image
+})
+  .then(response => response.json())
+  .then(data => {
+	console.log('help')
+});
+
+
+
+//end endpoint code
+(function () {
+  const params = new URLSearchParams(window.location.search);
 var code = (params.get("code"));
 var playlist_id = (params.get("playlist"));
-console.log(code);
-console.log(playlist_id);
+
 
 fetch("https://api.spotify.com/v1/playlists/37i9dQZF1EM7W3MQyBRHnw/tracks?market=US&fields=items(track(id))&limit=100&offset=0", {
   headers:
@@ -20,12 +43,7 @@ fetch("https://api.spotify.com/v1/playlists/37i9dQZF1EM7W3MQyBRHnw/tracks?market
       tracks += (data.items[i]['track']['id']) + '%2C';
     }
     var tracks = tracks.substring(0,tracks.length-3)
-  })
-  .catch(console.error);
-// These need to be nested, tracks needs to be from the earlier call
-//this one is an example
-var tracks = '4JpKVNYnVcJ8tuMKjAj50A%2C2NRANZE9UCmPAS5XVbXL40%2C24JygzOLM0EmRQeGtFcIcG';
-  fetch('https://api.spotify.com/v1/audio-features?ids='+ tracks,  {
+    fetch('https://api.spotify.com/v1/audio-features?ids='+ tracks,  {
     headers:
     {
       'Accept': 'application/json',
@@ -35,14 +53,29 @@ var tracks = '4JpKVNYnVcJ8tuMKjAj50A%2C2NRANZE9UCmPAS5XVbXL40%2C24JygzOLM0EmRQeG
   })
     .then(response => response.json())
     .then(data => {
-      console.log(data);
-      console.log('hello');
+      var avg_valence = 0;
+      var avg_energy = 0;
+      var mapping = {};
+      console.log(data.audio_features[0]['mode'])
+      for (i = 0; i < data.audio_features.length; i++) {
+        avg_valence += (data.audio_features[i]['valence'])/data.audio_features.length;
+        avg_energy += (data.audio_features[i]['energy'])/data.audio_features.length;
+
+        if (!mapping[data.audio_features[i]['mode']]) 
+        {mapping[data.audio_features[i]['mode']] = 0;
+        }
+        mapping[data.audio_features[i]['mode']] += 1
+      }
+      var mode_mode = parseInt(Object.keys(mapping).reduce(function(a, b){ return mapping[a] > mapping[b] ? a : b }));
+      console.log(avg_valence, avg_energy, mode_mode);
+
     })
-    .catch(console.error);
+  })
+  .catch(console.error);
 
 
-//end endpoint code
-(function () {
+
+
   var canvas = document.getElementById("canvas");
   const refreshBtn = document.getElementById("refresh");
   var fractal = new window.mandelbrotFractal.Fractal(canvas);
