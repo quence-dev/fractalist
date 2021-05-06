@@ -154,12 +154,12 @@ vertical.oninput = function () {
 function downloadImg() {
   // IE/Edge Support (PNG only)
   if (window.navigator.msSaveBlob) {
-    window.navigator.msSaveBlob(c.msToBlob(), "cover-image.png");
+    window.navigator.msSaveBlob(bgc.msToBlob(), "cover-image.png");
   } else {
     const a = document.createElement("a");
     document.body.appendChild(a);
     a.download = "cover-image.jpg";
-    a.href = document.getElementById("canvas").toDataURL("image/jpeg").replace("image/jpeg", "image/octet-stream");
+    a.href = document.getElementById("bgcanvas").toDataURL("image/jpeg").replace("image/jpeg", "image/octet-stream");
     a.click();
     document.body.removeChild(a);
   }
